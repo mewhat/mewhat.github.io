@@ -83,28 +83,19 @@
 
 
 
-<meta name="description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]
-----------
-函数声明提升指的是函数在执行代码之前会在作用域链中搜索读取函数声明，这就意味着可以把函数声明写在函数的后面。
-
-示例代码  1234567891011121314151617181920212223242526272829303132333435363738394041test();var t">
+<meta name="description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数提升|this对象|闭包">
 <meta property="og:url" content="http://yoursite.com/2016/09/10/函数提升_this对象_闭包/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]
-----------
-函数声明提升指的是函数在执行代码之前会在作用域链中搜索读取函数声明，这就意味着可以把函数声明写在函数的后面。
-
-示例代码  1234567891011121314151617181920212223242526272829303132333435363738394041test();var t">
-<meta property="og:updated_time" content="2016-10-12T13:54:05.451Z">
+<meta property="og:description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/48a91cf621818aff9a6e.png">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/this.png">
+<meta property="og:updated_time" content="2016-10-12T16:34:59.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数提升|this对象|闭包">
-<meta name="twitter:description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]
-----------
-函数声明提升指的是函数在执行代码之前会在作用域链中搜索读取函数声明，这就意味着可以把函数声明写在函数的后面。
-
-示例代码  1234567891011121314151617181920212223242526272829303132333435363738394041test();var t">
+<meta name="twitter:description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]">
+<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/48a91cf621818aff9a6e.png">
 
 
 
@@ -315,12 +306,10 @@
 
       
         <h2 id="函数提升-this对象-闭包的理解"><a href="#函数提升-this对象-闭包的理解" class="headerlink" title="函数提升|this对象|闭包的理解"></a>函数提升|this对象|闭包的理解</h2><h5 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h5><p>@(Javascript)[笔记|后端]</p>
-<pre><code>----------
-</code></pre><p><strong>函数声明提升</strong>指的是函数在执行代码之前会在作用域链中搜索读取函数声明，这就意味着可以把函数声明写在函数的后面。</p>
-<ul>
-<li><strong>示例代码</strong>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">test();</div><div class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hi"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//function undefined</span></div><div class="line"></div><div class="line">test();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hello"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//Hello</span></div><div class="line"><span class="comment">//test函数声明提升，javascript解释器会把代码中的函数声明提升到作用域顶部</span></div><div class="line"></div><div class="line"><span class="comment">//函数声明优先级高于变量声明</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pric</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">pric();</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pric</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">pric();</div><div class="line"></div><div class="line"><span class="comment">//立即执行函数，运用块级作用域，函数声明优先级高于变量声明</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<p><img src="http://oemsj8g9f.bkt.clouddn.com/48a91cf621818aff9a6e.png" alt=""><br><a id="more"></a></p>
+<p><strong>函数声明提升</strong>指的是函数在执行代码之前会在作用域链中搜索读取函数声明，这就意味着可以把函数声明写在函数的后面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">test();</div><div class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hi"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//function undefined</span></div><div class="line"></div><div class="line">test();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hello"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//Hello</span></div><div class="line"><span class="comment">//test函数声明提升，javascript解释器会把代码中的函数声明提升到作用域顶部</span></div><div class="line"></div><div class="line"><span class="comment">//函数声明优先级高于变量声明</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pric</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">pric();</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pric</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">pric();</div><div class="line"></div><div class="line"><span class="comment">//立即执行函数，运用块级作用域，函数声明优先级高于变量声明</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><img src="http://oemsj8g9f.bkt.clouddn.com/this.png" alt=""></p>
 <blockquote>
 <p>函数声明会提升，但是函数表达式不会提升；变量声明也会提升，而变量表达式不会提升，变量表达式在变量没有声明的时候这个变量会被添加到全局作用域中。javascript解析器会率先读取函数声明，并使其在执行任何代码之前可用（可访问）</p>
 </blockquote>
@@ -371,16 +360,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/10/javascript第七章/" rel="next" title="函数提升|this对象|闭包">
-                <i class="fa fa-chevron-left"></i> 函数提升|this对象|闭包
+              <a href="/2016/09/10/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/06/重置默认样式/" rel="prev" title="重置默认样式">
-                重置默认样式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/10/javascript第七章/" rel="prev" title="函数提升|this对象|闭包">
+                函数提升|this对象|闭包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
