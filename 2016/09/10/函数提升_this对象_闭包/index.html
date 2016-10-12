@@ -90,15 +90,14 @@
 示例代码  1234567891011121314151617181920212223242526272829303132333435363738394041test();var t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数提升|this对象|闭包">
-<meta property="og:url" content="http://yoursite.com/2016/09/10/javascript第七章/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/09/10/函数提升_this对象_闭包/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
 <meta property="og:description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]
 ----------
 函数声明提升指的是函数在执行代码之前会在作用域链中搜索读取函数声明，这就意味着可以把函数声明写在函数的后面。
 
 示例代码  1234567891011121314151617181920212223242526272829303132333435363738394041test();var t">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/this.png">
-<meta property="og:updated_time" content="2016-10-12T15:25:43.700Z">
+<meta property="og:updated_time" content="2016-10-12T13:54:05.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数提升|this对象|闭包">
 <meta name="twitter:description" content="函数提升|this对象|闭包的理解读书笔记@(Javascript)[笔记|后端]
@@ -106,7 +105,6 @@
 函数声明提升指的是函数在执行代码之前会在作用域链中搜索读取函数声明，这就意味着可以把函数声明写在函数的后面。
 
 示例代码  1234567891011121314151617181920212223242526272829303132333435363738394041test();var t">
-<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/this.png">
 
 
 
@@ -127,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/10/javascript第七章/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/10/函数提升_this对象_闭包/"/>
 
   <title> 函数提升|this对象|闭包 | 辣鸡的日常 </title>
 </head>
@@ -292,8 +290,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/10/javascript第七章/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/javascript第七章/" itemprop="commentsCount"></span>
+                <a href="/2016/09/10/函数提升_this对象_闭包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/10/函数提升_this对象_闭包/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -323,7 +321,6 @@
 <li><strong>示例代码</strong>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">test();</div><div class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hi"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//function undefined</span></div><div class="line"></div><div class="line">test();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(<span class="string">"Hello"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//Hello</span></div><div class="line"><span class="comment">//test函数声明提升，javascript解释器会把代码中的函数声明提升到作用域顶部</span></div><div class="line"></div><div class="line"><span class="comment">//函数声明优先级高于变量声明</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pric</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">pric();</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pric</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">pric();</div><div class="line"></div><div class="line"><span class="comment">//立即执行函数，运用块级作用域，函数声明优先级高于变量声明</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	alert(a);</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="string">"function"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/this.png" alt=""></p>
 <blockquote>
 <p>函数声明会提升，但是函数表达式不会提升；变量声明也会提升，而变量表达式不会提升，变量表达式在变量没有声明的时候这个变量会被添加到全局作用域中。javascript解析器会率先读取函数声明，并使其在执行任何代码之前可用（可访问）</p>
 </blockquote>
@@ -335,11 +332,11 @@
 </ul>
 <blockquote>
 <p><strong>闭包</strong>指有权访问另外一个函数作用域的变量的函数，常见的方式是在一个函数中再创建一个函数。闭包中的作用域链是在本函数中的作用域向上一层的函数或者全局作用域连接。闭包可以访问作用域链连接的作用域中的变量和对象。</p>
-</blockquote>
 <ul>
 <li><strong>示例代码</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aMessage = <span class="string">"Hello World!"</span>;</div><div class="line"><span class="keyword">var</span> aFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> anotherMes = <span class="string">"Hello JS!"</span>;</div><div class="line">	<span class="comment">//闭包</span></div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(anotherMes + <span class="string">"&lt;br /&gt;"</span>);</div><div class="line">		alert(aMessage);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) &#123;</div><div class="line">		result[i] = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="keyword">return</span> num;</div><div class="line">			&#125;;</div><div class="line">		&#125;(i);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+</blockquote>
 <h4 id="关于this对象"><a href="#关于this对象" class="headerlink" title="关于this对象"></a>关于this对象</h4><p>this对象就是在运行时基于函数的执行环境绑定的：在全局函数中，this等于windows，而当函数被当作某个对象的方法调用的时候，this等于那个对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"windows"</span>;</div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">	name : <span class="string">"object"</span>,</div><div class="line">	getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="定义块级作用域-gt-私有作用域"><a href="#定义块级作用域-gt-私有作用域" class="headerlink" title="定义块级作用域-&gt;私有作用域"></a>定义块级作用域-&gt;私有作用域</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">outputNumbers</span>(<span class="params">count</span>) </span>&#123;</div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;count;i++) &#123;</div><div class="line">			alert(i);</div><div class="line">		&#125;</div><div class="line">	&#125;)();</div><div class="line">	<span class="comment">///导致错误，无法访问outputNumbers中的i;</span></div><div class="line">	alert(i);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//(function()&#123;&#125;();内部定义的变量和对象在函数调用完后销毁)</span></div></pre></td></tr></table></figure>
 <h4 id="静态私有变量"><a href="#静态私有变量" class="headerlink" title="静态私有变量"></a>静态私有变量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">///私有变量和私有函数</span></div><div class="line">	<span class="keyword">var</span> privateVariable = <span class="number">10</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">privateFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">//构造函数</span></div><div class="line">	myObject = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	&#125;;</div><div class="line">	</div><div class="line">	<span class="comment">//公有的/特权方法</span></div><div class="line">	myObject.prototype.publicMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		privateVariable++;</div><div class="line">		<span class="keyword">return</span> privateFunction();</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
@@ -374,16 +371,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/09/10/javascript第七章/" rel="next" title="函数提升|this对象|闭包">
+                <i class="fa fa-chevron-left"></i> 函数提升|this对象|闭包
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/10/函数提升_this对象_闭包/" rel="prev" title="函数提升|this对象|闭包">
-                函数提升|this对象|闭包 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/06/重置默认样式/" rel="prev" title="重置默认样式">
+                重置默认样式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -410,8 +407,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/10/javascript第七章/"
-           data-title="函数提升|this对象|闭包" data-url="http://yoursite.com/2016/09/10/javascript第七章/">
+      <div class="ds-thread" data-thread-key="2016/09/10/函数提升_this对象_闭包/"
+           data-title="函数提升|this对象|闭包" data-url="http://yoursite.com/2016/09/10/函数提升_this对象_闭包/">
       </div>
     
   </div>
