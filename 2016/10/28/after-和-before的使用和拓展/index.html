@@ -1,0 +1,718 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content=":after 和 :before的使用和拓展在最初，伪元素的语法是使用“:”（一个冒号），随着web的发展，在CSS3中修订后的伪元素使用“::”（两个冒号），也就是::before 和 ::after—以区分伪元素和伪类（比如:hover，:active等）
+
+伪元素的使用CSS 伪元素用于向某些选择器设置特殊效果。
+
+:first-letter向文本的第一个字母添加特殊样式
+:first-li">
+<meta property="og:type" content="article">
+<meta property="og:title" content=":after 和 :before的使用和拓展">
+<meta property="og:url" content="http://yoursite.com/2016/10/28/after-和-before的使用和拓展/index.html">
+<meta property="og:site_name" content="辣鸡的日常">
+<meta property="og:description" content=":after 和 :before的使用和拓展在最初，伪元素的语法是使用“:”（一个冒号），随着web的发展，在CSS3中修订后的伪元素使用“::”（两个冒号），也就是::before 和 ::after—以区分伪元素和伪类（比如:hover，:active等）
+
+伪元素的使用CSS 伪元素用于向某些选择器设置特殊效果。
+
+:first-letter向文本的第一个字母添加特殊样式
+:first-li">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161028215944.png">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/20161028203402.png">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161028205241.png">
+<meta property="og:updated_time" content="2016-10-28T15:04:02.491Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=":after 和 :before的使用和拓展">
+<meta name="twitter:description" content=":after 和 :before的使用和拓展在最初，伪元素的语法是使用“:”（一个冒号），随着web的发展，在CSS3中修订后的伪元素使用“::”（两个冒号），也就是::before 和 ::after—以区分伪元素和伪类（比如:hover，:active等）
+
+伪元素的使用CSS 伪元素用于向某些选择器设置特殊效果。
+
+:first-letter向文本的第一个字母添加特殊样式
+:first-li">
+<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161028215944.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328385020167718000,
+      author: '辣鸡'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/28/after-和-before的使用和拓展/"/>
+
+  <title> :after 和 :before的使用和拓展 | 辣鸡的日常 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">辣鸡的日常</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">余生请指教 (滑稽脸</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                :after 和 :before的使用和拓展
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-28T21:54:18+08:00" content="2016-10-28">
+              2016-10-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/28/after-和-before的使用和拓展/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/28/after-和-before的使用和拓展/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-user"></i>本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="after-和-before的使用和拓展"><a href="#after-和-before的使用和拓展" class="headerlink" title=":after 和 :before的使用和拓展"></a>:after 和 :before的使用和拓展</h3><p>在最初，伪元素的语法是使用“:”（一个冒号），随着web的发展，在CSS3中修订后的伪元素使用“::”（两个冒号），也就是::before 和 ::after—以区分伪元素和伪类（比如:hover，:active等）<br><img src="http://oemsj8g9f.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161028215944.png" alt=""></p>
+<blockquote>
+<p>伪元素的使用CSS 伪元素用于向某些选择器设置特殊效果。</p>
+</blockquote>
+<pre><code>:first-letter向文本的第一个字母添加特殊样式
+:first-line    向文本的首行添加特殊样式
+:before    在元素之前添加内容
+:after    在元素之后添加内容
+first-line,first-letter只能用于块级元素
+可以结合多个伪元素一起使用
+</code></pre><a id="more"></a>
+<p>好了开始代码：</p>
+<p>一个很好的例子就是在li列表前面加上图标<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>C<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>C++<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>Python<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>Javascript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span> &#123;</div><div class="line">	<span class="attribute">list-style</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">	<span class="attribute">content</span>: <span class="built_in">url</span>(star.png);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://oemsj8g9f.bkt.clouddn.com/20161028203402.png" alt=""></p>
+<p>还有一个例子通过:before和:after添加特效渐变阴影——&gt;<a href="http://www.hongkiat.com/blog/author/paulunderwood/" target="_blank" rel="external">参考</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box effect"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">h3</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">h3</span> &#123;</div><div class="line">	<span class="attribute">text-align</span>: center;</div><div class="line">	<span class="attribute">position</span>: relative;</div><div class="line">	<span class="attribute">top</span>: <span class="number">80px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">70%</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="number">#fff</span>;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">40px</span> auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.effect</span> &#123;</div><div class="line">	<span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.effect</span><span class="selector-pseudo">:before</span>, <span class="selector-class">.effect</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">	<span class="attribute">z-index</span>: -<span class="number">1</span>;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">	<span class="attribute">bottom</span>: <span class="number">15px</span>;</div><div class="line">	<span class="attribute">left</span>: <span class="number">10px</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">	<span class="attribute">top</span>: <span class="number">80%</span>;</div><div class="line">	<span class="attribute">max-width</span>: <span class="number">300px</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="number">#777</span>;</div><div class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">10px</span> <span class="number">#777</span>;</div><div class="line">	<span class="attribute">transform</span>: <span class="built_in">rotate</span>(-3deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.effect</span><span class="selector-pseudo">:after</span></div><div class="line">&#123;</div><div class="line">	<span class="attribute">transform</span>: <span class="built_in">rotate</span>(3deg);</div><div class="line">	<span class="attribute">right</span>: <span class="number">10px</span>;</div><div class="line">	<span class="attribute">left</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果图是图一 Orz</p>
+<p>其他伪元素的使用：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>He was my North, my South, my East and West, <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	My working week and my Sunday rest, <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	My noon, my midnight, my talk, my song; <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	I thought that love would last forever: I was wrong.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-line</span> &#123;</div><div class="line">	<span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-letter</span> &#123;</div><div class="line">	<span class="attribute">color</span>: blue;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">	<span class="attribute">content</span>: <span class="built_in">url</span>(star.png);</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">	<span class="attribute">content</span>: <span class="built_in">url</span>(after.png);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果：<br><img src="http://oemsj8g9f.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20161028205241.png" alt=""></p>
+<p>区别于伪类<br>伪类的使用简介：</p>
+<blockquote>
+<p>CSS 伪类用于向某些选择器添加特殊的效果。<br>    :active    向被激活的元素添加样式<br>    :focus    向拥有键盘输入焦点的元素添加样式<br>    :hover    当鼠标悬浮在元素上方时，向元素添加样式<br>    :link    向未被访问的链接添加样式<br>    :visited    向已被访问的链接添加样<br>    :first-child    向元素的第一个子元素添加样式<br>    :lang    向带有指定 lang 属性的元素添加样式</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mewhat Chen WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mewhat Chen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/13/now-status/" rel="next" title="近期总结">
+                <i class="fa fa-chevron-left"></i> 近期总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/28/after-和-before的使用和拓展/"
+           data-title=":after 和 :before的使用和拓展" data-url="http://yoursite.com/2016/10/28/after-和-before的使用和拓展/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oemsj8g9f.bkt.clouddn.com/avatar.png"
+               alt="Mewhat Chen" />
+          <p class="site-author-name" itemprop="name">Mewhat Chen</p>
+          <p class="site-description motion-element" itemprop="description">Javascript | Python | Node</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mewhat" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/mewhat" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#after-和-before的使用和拓展"><span class="nav-number">1.</span> <span class="nav-text">:after 和 :before的使用和拓展</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mewhat Chen</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i>本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i>本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"iissnan-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
