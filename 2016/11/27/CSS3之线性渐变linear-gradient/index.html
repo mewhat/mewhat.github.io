@@ -67,7 +67,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="点点滴滴," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -83,26 +83,29 @@
 
 
 
-<meta name="description" content="近期总结先来一波鸡汤
+<meta name="description" content="线性渐变linear-gradient运用——条纹背景@(CSS)[笔记]
 
-人丑就该多读书。你必须自己叫醒自己。不能把世界让给你鄙视的人。命是弱者的借口，运是强者的谦辞。身不饥寒，天未曾负我；学无长进，我何以对天。说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）">
+
+CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客CSS3 Gradient 和菜鸟教程的CSS3 渐变Gradients">
 <meta property="og:type" content="article">
-<meta property="og:title" content="近期总结">
-<meta property="og:url" content="http://yoursite.com/2016/10/13/now-status/index.html">
+<meta property="og:title" content="线性渐变linear-gradient运用——条纹背景">
+<meta property="og:url" content="http://yoursite.com/2016/11/27/CSS3之线性渐变linear-gradient/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="近期总结先来一波鸡汤
+<meta property="og:description" content="线性渐变linear-gradient运用——条纹背景@(CSS)[笔记]
 
-人丑就该多读书。你必须自己叫醒自己。不能把世界让给你鄙视的人。命是弱者的借口，运是强者的谦辞。身不饥寒，天未曾负我；学无长进，我何以对天。说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/006x19xfgw1f8jrbopi6cj30jg0ay3z8.jpg">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/56143.jpg">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/you_dont_know_javascript.jpg">
-<meta property="og:updated_time" content="2016-10-13T14:15:51.363Z">
+
+CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客CSS3 Gradient 和菜鸟教程的CSS3 渐变Gradients">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B91.png">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B92.png">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B93.png">
+<meta property="og:updated_time" content="2016-11-27T03:47:07.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="近期总结">
-<meta name="twitter:description" content="近期总结先来一波鸡汤
+<meta name="twitter:title" content="线性渐变linear-gradient运用——条纹背景">
+<meta name="twitter:description" content="线性渐变linear-gradient运用——条纹背景@(CSS)[笔记]
 
-人丑就该多读书。你必须自己叫醒自己。不能把世界让给你鄙视的人。命是弱者的借口，运是强者的谦辞。身不饥寒，天未曾负我；学无长进，我何以对天。说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）">
-<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/006x19xfgw1f8jrbopi6cj30jg0ay3z8.jpg">
+
+CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客CSS3 Gradient 和菜鸟教程的CSS3 渐变Gradients">
+<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B91.png">
 
 
 
@@ -123,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/13/now-status/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/27/CSS3之线性渐变linear-gradient/"/>
 
-  <title> 近期总结 | 辣鸡的日常 </title>
+  <title> 线性渐变linear-gradient运用——条纹背景 | 辣鸡的日常 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +268,7 @@
             
             
               
-                近期总结
+                线性渐变linear-gradient运用——条纹背景
               
             
           </h1>
@@ -277,8 +280,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-13T21:52:50+08:00" content="2016-10-13">
-              2016-10-13
+            <time itemprop="dateCreated" datetime="2016-11-27T10:54:06+08:00" content="2016-11-27">
+              2016-11-27
             </time>
           </span>
 
@@ -288,8 +291,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/13/now-status/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/now-status/" itemprop="commentsCount"></span>
+                <a href="/2016/11/27/CSS3之线性渐变linear-gradient/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/CSS3之线性渐变linear-gradient/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -317,22 +320,72 @@
       
 
       
-        <blockquote>
-<p>近期总结<br>先来一波鸡汤</p>
-</blockquote>
-<p><strong>人丑就该多读书。<br>你必须自己叫醒自己。<br>不能把世界让给你鄙视的人。<br>命是弱者的借口，运是强者的谦辞。<br>身不饥寒，天未曾负我；学无长进，我何以对天。<br>说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）</strong><br><img src="http://oemsj8g9f.bkt.clouddn.com/006x19xfgw1f8jrbopi6cj30jg0ay3z8.jpg" alt=""><br><a id="more"></a></p>
+        <h3 id="线性渐变linear-gradient运用——条纹背景"><a href="#线性渐变linear-gradient运用——条纹背景" class="headerlink" title="线性渐变linear-gradient运用——条纹背景"></a>线性渐变linear-gradient运用——条纹背景</h3><p>@(CSS)[笔记]</p>
+<hr>
 <blockquote>
-<p>前期的我</p>
+<p>CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客<a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">CSS3 Gradient</a> 和菜鸟教程的CSS3 渐变<a href="http://www.runoob.com/css3/css3-gradients.html" target="_blank" rel="external">Gradients</a> </p>
 </blockquote>
-<p>目前已经大三过去一个月多月了，大学的日子也差不多了，离实习工作也不过只有一年不到了，<br>然而问问自己到目前为止学到了什么，好像并没有，大一大二都是无头苍蝇跟着兴趣觉得什么好玩就浪一会，<br>玩玩ACM，玩玩C++/C ，又玩玩游戏开发Cocos2d写了个flappy bird 2048 ，<br>后来看到Python那么6，又玩玩Python，爬虫，抓视频，抓网页，抓妹子图片……</p>
+<a id="more"></a>
+<p>CSS3的线性渐变linear-gradient用法就不多介绍了，详情参考上面的博客和教程。<br>最简单的使用就是（方向，color1，color2）意思是在某个方向位置开始，颜色从color1渐变到color2</p>
+<p>上一周图书馆借了一本《CSS揭秘》，看了一半收获很大，《CSS揭秘》介绍了很多CSS方面上的技巧，其中有一个就是背景条纹，使用CSS线性渐变和background-size完成的效果，两者的结合得到的效果很强大。</p>
+<p>在设计网页的时候，经常会使用到条纹背景，或者条纹特效；通常的做法是使用图片或者SVG来取代图片，但是不管使用二者哪一个都会使HTTP请求增加，这是我们不想见到的。在今天的话使用CSS3是可以解决条纹背景的问题的。</p>
+<p>css线性渐变</p>
+<pre><code>.line1 {
+    background: linear-gradient(#fb3,#58a);
+}
+</code></pre><p>容器顶部和底部分别填充#fb3,#58a实色，正真的渐变只有中间的60%</p>
+<pre><code>.line2 {
+    background: linear-gradient(#fb3 20%,#58a 80%);
+}
+</code></pre><p>设置50%的话，就看不到渐变了</p>
+<pre><code>.line3 {
+    background: linear-gradient(#fb3 50%,#58a 50%);
+    background-size: 100% 30px;
+}
+</code></pre><p>不等宽条纹</p>
+<pre><code>.line4 {
+    background: linear-gradient(#fb3 30%,#58a 30%);
+    background-size: 100% 30px;
+}
+</code></pre><p>垂直条纹</p>
+<pre><code>.line5 {
+    background: linear-gradient(to right,#fb3 50%,#58a 0);
+    background-size: 30px 100%;
+}
+</code></pre><p>45°条纹</p>
+<pre><code>.line6 {
+    background: linear-gradient(45deg,#fb3 50%,#58a 0);
+    background-size: 30px 30px;
+}
+</code></pre><p>45°条纹2</p>
+<pre><code>.line7 {
+    background: linear-gradient(45deg,#fb3 25%,#58a 0,#58a 50%,#fb3 0,#fb3 75%,#58a 0);
+    background-size: 30px 30px;
+}
+</code></pre><p>45°条纹3(重复线性渐变repeating-linear-gradient)</p>
+<pre><code>.line8 {
+    background: repeating-linear-gradient(45deg,#fb3,#fb3 15px,#58a 0,#58a 30px);
+}
+</code></pre><p>三色条纹</p>
+<pre><code>.line9 {
+    background: linear-gradient(#fb3 33.33%,#58a 0,#58a 66.66%,yellowgreen 0);
+    background-size: 100% 30px;
+}
+</code></pre><p>同色系条纹</p>
+<pre><code>.line10 {
+    background: repeating-linear-gradient(30deg,#79b,#79b 15px,#58a 0,#58a 30px);
+}
+</code></pre><p>同色系条纹（运用半透明色）</p>
+<pre><code>.line11 {
+    background: #58a;
+    background-image: repeating-linear-gradient(30deg,hsla(0,0%,100%,0.1),
+        hsla(0,0%,100%,0.1) 15px,
+        transparent 0,transparent 30px);
+}
+</code></pre><p>简单的效果图：</p>
+<p><img src="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B91.png" alt=""><br><img src="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B92.png" alt=""><br><img src="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B93.png" alt=""></p>
 <blockquote>
-<p>目前的我</p>
-</blockquote>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/56143.jpg" alt=""><br>到现在很认真的干起了Javascript，走前端路，目标Node全栈；<br>方向很明确 所以看书也很明确，大二结束的时候一直在看Javascript的视频，刷之前丢下的 HTML CSS知识点，<br>拿起了大一看了一章就放下的Javascript高级程序设计（两年了还是第三版验证经典，滑稽脸）；<br>有空刷刷掘金社区（强烈推荐，很多干货），刷刷知乎，刷刷简书，无聊看看漫画……<br>红宝书看完Javascript动画实在啃不下去了，就去图书馆看了看有什么好书，朋友推荐：<br>Javascript忍者秘籍，单页Web应用，偶尔发现Node，然后深深被吸引，然后不可自拔；</p>
-<p>前不久看不下红宝书，然后话3,4天把Javascript Dom编程艺术刷完了，很好的一本书，其实知识点在红宝书上已经看过了，而且红宝书的更加全面，不过Dom编程艺术的话，更加侧重思考，一路下来，一简单的图片墙小Demo引入Dom的操作，<br>在写代码中思考对用户的体验，如果用户的浏览器不支持Javascript，不支持CSS，编写的代码也要尽量的不影响用户的体验，做到Javascript的平稳退化；<br>有空写一下读后感，（滑稽脸</p>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/you_dont_know_javascript.jpg" alt=""><br>然后不久前出的一本《你不知道的Javascript（初级篇）》发现这本书非常好，渐渐断断目前看到了Javascript中this的理解，剖析的很深，很容易懂；看完一定要写写读后感（渣渣语文挂科，逃）<br>中级篇也出来了，看了看目录就有想入手的冲动，Promise异步编程等等的知识，太想了解了；<br>看到大神们在掘金的文章受益匪浅啊，看到博客水平也很高啊，距离还很远，（向dalao低头）</p>
-<blockquote>
-<p>不管怎么说咯，加油咯<br>近期急需鸡汤Orz<br>好了，继续看书了Orz<br>坑已经挖了，就要自己填了</p>
+<p>具体的效果在之后的作品中更新</p>
 </blockquote>
 
       
@@ -377,7 +430,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/点点滴滴/" rel="tag">#点点滴滴</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
         </div>
       
@@ -386,17 +439,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/06/重置默认样式/" rel="next" title="重置默认样式">
-                <i class="fa fa-chevron-left"></i> 重置默认样式
+              <a href="/2016/11/27/css动画animatee/" rel="next" title="css动画之animate">
+                <i class="fa fa-chevron-left"></i> css动画之animate
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/28/after-和-before的使用和拓展/" rel="prev" title=":after 和 :before的使用和拓展">
-                :after 和 :before的使用和拓展 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -422,8 +471,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/13/now-status/"
-           data-title="近期总结" data-url="http://yoursite.com/2016/10/13/now-status/">
+      <div class="ds-thread" data-thread-key="2016/11/27/CSS3之线性渐变linear-gradient/"
+           data-title="线性渐变linear-gradient运用——条纹背景" data-url="http://yoursite.com/2016/11/27/CSS3之线性渐变linear-gradient/">
       </div>
     
   </div>
@@ -527,7 +576,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性渐变linear-gradient运用——条纹背景"><span class="nav-number">1.</span> <span class="nav-text">线性渐变linear-gradient运用——条纹背景</span></a></li></ol></div>
             
           </div>
         </section>
