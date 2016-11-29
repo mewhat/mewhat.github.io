@@ -67,7 +67,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -83,33 +83,31 @@
 
 
 
-<meta name="description" content="##重置默认样式默认样式在元素之间具有一定的边距，或者是其他的默认样式，所以在编写页面的时候一般会在css文件夹中创建一个reset.css重置默认样式的css文件。
-常用的默认样式：
+<meta name="description" content="window.onload和$(document).ready的区别@(JavaScript)[笔记]
 
-重置所有外边距和内边距 
 
-1234* &amp;#123;	margin: 0px;	padding: 0px;&amp;#125;">
+JavaScript的原生加载API window.onload和JQuery的加载API $(document).ready
+
+1，window.onload和$(document).ready执行时间不同当文档完全下载到浏览器中时，会触发window.onload事件。这意味着页面上的全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重置默认样式">
-<meta property="og:url" content="http://yoursite.com/2016/10/06/重置默认样式/index.html">
+<meta property="og:title" content="window.onload和$(document).ready的区别">
+<meta property="og:url" content="http://yoursite.com/2016/11/29/window-onload和JQuery-document-ready的区别/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="##重置默认样式默认样式在元素之间具有一定的边距，或者是其他的默认样式，所以在编写页面的时候一般会在css文件夹中创建一个reset.css重置默认样式的css文件。
-常用的默认样式：
+<meta property="og:description" content="window.onload和$(document).ready的区别@(JavaScript)[笔记]
 
-重置所有外边距和内边距 
 
-1234* &amp;#123;	margin: 0px;	padding: 0px;&amp;#125;">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.png">
-<meta property="og:updated_time" content="2016-11-27T02:54:47.990Z">
+JavaScript的原生加载API window.onload和JQuery的加载API $(document).ready
+
+1，window.onload和$(document).ready执行时间不同当文档完全下载到浏览器中时，会触发window.onload事件。这意味着页面上的全">
+<meta property="og:updated_time" content="2016-11-29T05:08:09.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重置默认样式">
-<meta name="twitter:description" content="##重置默认样式默认样式在元素之间具有一定的边距，或者是其他的默认样式，所以在编写页面的时候一般会在css文件夹中创建一个reset.css重置默认样式的css文件。
-常用的默认样式：
+<meta name="twitter:title" content="window.onload和$(document).ready的区别">
+<meta name="twitter:description" content="window.onload和$(document).ready的区别@(JavaScript)[笔记]
 
-重置所有外边距和内边距 
 
-1234* &amp;#123;	margin: 0px;	padding: 0px;&amp;#125;">
-<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.png">
+JavaScript的原生加载API window.onload和JQuery的加载API $(document).ready
+
+1，window.onload和$(document).ready执行时间不同当文档完全下载到浏览器中时，会触发window.onload事件。这意味着页面上的全">
 
 
 
@@ -130,9 +128,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/06/重置默认样式/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/29/window-onload和JQuery-document-ready的区别/"/>
 
-  <title> 重置默认样式 | 辣鸡的日常 </title>
+  <title> window.onload和$(document).ready的区别 | 辣鸡的日常 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +270,7 @@
             
             
               
-                重置默认样式
+                window.onload和$(document).ready的区别
               
             
           </h1>
@@ -284,8 +282,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-06T21:02:33+08:00" content="2016-10-06">
-              2016-10-06
+            <time itemprop="dateCreated" datetime="2016-11-29T12:07:47+08:00" content="2016-11-29">
+              2016-11-29
             </time>
           </span>
 
@@ -295,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/06/重置默认样式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/06/重置默认样式/" itemprop="commentsCount"></span>
+                <a href="/2016/11/29/window-onload和JQuery-document-ready的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/29/window-onload和JQuery-document-ready的区别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -324,17 +322,39 @@
       
 
       
-        <p>##重置默认样式<br><strong>默认样式</strong>在元素之间具有一定的边距，或者是其他的默认样式，所以在编写页面的时候一般会在css文件夹中创建一个reset.css重置默认样式的css文件。</p>
-<p>常用的默认样式：</p>
+        <h3 id="window-onload和-document-ready的区别"><a href="#window-onload和-document-ready的区别" class="headerlink" title="window.onload和$(document).ready的区别"></a>window.onload和$(document).ready的区别</h3><p>@(JavaScript)[笔记]</p>
+<hr>
 <blockquote>
-<p>重置所有外边距和内边距 </p>
+<p>JavaScript的原生加载API window.onload和JQuery的加载API $(document).ready</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0px</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.png" alt=""><br><a id="more"></a></p>
+<h4 id="1，window-onload和-document-ready执行时间不同"><a href="#1，window-onload和-document-ready执行时间不同" class="headerlink" title="1，window.onload和$(document).ready执行时间不同"></a>1，window.onload和$(document).ready执行时间不同</h4><p>当文档完全下载到浏览器中时，会触发window.onload事件。这意味着页面上的全部元素（包括图片等的资源）对JavaScript而言都是可以操作的，这种情况对编写功能性的代码非常有利，因为无需考虑加载的次序。</p>
+<p>然而$(document).ready在DOM节点树加载完成之后立即执行。通过$(document).ready()注册的事件处理程序，则会在DOM完全就绪并可以使用时调用。虽然这也意味着所有元素对脚本而言都是可以访问的，但是，却不意味着所有关联的文件都已经下载完毕。换句话说，当HTML下载完成并解析为DOM树之后，代码就可以运行。<br><a id="more"></a></p>
 <blockquote>
-<p>样式表中具有相同样式的可以放在重置样式表中</p>
+<p>所谓的加载完成：使用$(document).ready()要优于使用onload事件处理程序，但必须要明确的一点是，因为支持文件可能还没有加载完成，所以类似图像的高度和宽度这样的属性此时则不一定会有效。如果需要访问这些属性，可能就得选择实现一个onload事件处理程序（或者是使用jQuery为load事件设置处理程序）。这两种机制能够和平共存。</p>
+<p>JQuery中有关加载的事件：<br>ready() 当HTML文档加载完成时触发<br>load() HTML所有组件全部加载完成时触发<br>unload() 当浏览器窗口关闭或用户单击一个新链接或在地址栏输入新网址即将打开一个新页面时触发（在表单填写的时候特别有效）</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">max-width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">border</span>: none;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">a</span> &#123;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">text-decoration</span>: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">li</span> &#123;</div><div class="line">    <span class="attribute">list-style</span>: none;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="2，使用的次数不同"><a href="#2，使用的次数不同" class="headerlink" title="2，使用的次数不同"></a>2，使用的次数不同</h4><p>window.onload = function() {}只会调用一次，就是再次调用的时候会覆盖之前的函数内容</p>
+<pre><code>window.onload = function() {
+    console.log(&apos;first-onload&apos;);
+}
+window.onload = function() {
+    console.log(&apos;second-onload&apos;);
+}
+//输出：second-onload
+</code></pre><p>然而$(document).ready(function(){}) 可以多次调用<br>每次调用这个方法都会向内部的行为队列中添加一个新函数，当页面加载完成后，所有函数都会被执行。而且，这些函数会按照注册它们的顺序依次执行。</p>
+<pre><code>$(document).ready(function() {
+console.log(&apos;first-ready&apos;);
+});
+$(document).ready(function() {
+    console.log(&apos;second-ready&apos;);
+});
+//输出：
+//first-ready
+//second-ready
+</code></pre><blockquote>
+<p>还有的就是$(document).ready(function(){})可以写成$(function(){})<br>官方文档<a href="http://learn.jquery.com/using-jquery-core/document-ready/" target="_blank" rel="external">document-ready</a></p>
+</blockquote>
 
       
     </div>
@@ -378,7 +398,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -387,17 +407,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/10/函数提升_this对象_闭包/" rel="next" title="函数提升|this对象|闭包">
-                <i class="fa fa-chevron-left"></i> 函数提升|this对象|闭包
+              <a href="/2016/11/27/CSS3之线性渐变linear-gradient/" rel="next" title="线性渐变linear-gradient运用——条纹背景">
+                <i class="fa fa-chevron-left"></i> 线性渐变linear-gradient运用——条纹背景
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/13/now-status/" rel="prev" title="近期总结">
-                近期总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -423,8 +439,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/06/重置默认样式/"
-           data-title="重置默认样式" data-url="http://yoursite.com/2016/10/06/重置默认样式/">
+      <div class="ds-thread" data-thread-key="2016/11/29/window-onload和JQuery-document-ready的区别/"
+           data-title="window.onload和$(document).ready的区别" data-url="http://yoursite.com/2016/11/29/window-onload和JQuery-document-ready的区别/">
       </div>
     
   </div>
@@ -528,7 +544,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#window-onload和-document-ready的区别"><span class="nav-number">1.</span> <span class="nav-text">window.onload和$(document).ready的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，window-onload和-document-ready执行时间不同"><span class="nav-number">1.1.</span> <span class="nav-text">1，window.onload和$(document).ready执行时间不同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2，使用的次数不同"><span class="nav-number">1.2.</span> <span class="nav-text">2，使用的次数不同</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
