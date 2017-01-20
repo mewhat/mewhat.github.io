@@ -257,6 +257,115 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/29/window-onload和JQuery-document-ready的区别/" itemprop="url">
+                  window.onload和$(document).ready的区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-29T12:07:47+08:00" content="2016-11-29">
+              2016-11-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/29/window-onload和JQuery-document-ready的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/29/window-onload和JQuery-document-ready的区别/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="window-onload和-document-ready的区别"><a href="#window-onload和-document-ready的区别" class="headerlink" title="window.onload和$(document).ready的区别"></a>window.onload和$(document).ready的区别</h3><p>@(JavaScript)[笔记]</p>
+<hr>
+<blockquote>
+<p>JavaScript的原生加载API window.onload和JQuery的加载API $(document).ready</p>
+</blockquote>
+<h4 id="1，window-onload和-document-ready执行时间不同"><a href="#1，window-onload和-document-ready执行时间不同" class="headerlink" title="1，window.onload和$(document).ready执行时间不同"></a>1，window.onload和$(document).ready执行时间不同</h4><p>当文档完全下载到浏览器中时，会触发window.onload事件。这意味着页面上的全部元素（包括图片等的资源）对JavaScript而言都是可以操作的，这种情况对编写功能性的代码非常有利，因为无需考虑加载的次序。</p>
+<p>然而$(document).ready在DOM节点树加载完成之后立即执行。通过$(document).ready()注册的事件处理程序，则会在DOM完全就绪并可以使用时调用。虽然这也意味着所有元素对脚本而言都是可以访问的，但是，却不意味着所有关联的文件都已经下载完毕。换句话说，当HTML下载完成并解析为DOM树之后，代码就可以运行。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/29/window-onload和JQuery-document-ready的区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/27/CSS3之线性渐变linear-gradient/" itemprop="url">
                   线性渐变linear-gradient运用——条纹背景
                 </a>
@@ -670,115 +779,6 @@ first-line,first-letter只能用于块级元素
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/06/重置默认样式/" itemprop="url">
-                  重置默认样式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-06T21:02:33+08:00" content="2016-10-06">
-              2016-10-06
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/06/重置默认样式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/06/重置默认样式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>##重置默认样式<br><strong>默认样式</strong>在元素之间具有一定的边距，或者是其他的默认样式，所以在编写页面的时候一般会在css文件夹中创建一个reset.css重置默认样式的css文件。</p>
-<p>常用的默认样式：</p>
-<blockquote>
-<p>重置所有外边距和内边距 </p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">0px</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">0px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.png" alt=""><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/06/重置默认样式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -824,7 +824,7 @@ first-line,first-letter只能用于块级元素
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

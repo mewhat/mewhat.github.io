@@ -1,0 +1,736 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="《JavaScript设计模式与开发实战笔记一 — 模式基础》@(记录)[读书笔记]
+一：简介JavaScript设计模式多态技术：**多态的实际含义是**：同一操作作用于不同的对象上面，可以产生不同的解释和不同的执行结果。
+换句话说就是给不同的对象发送同一个消息的时候，这些对象会根据这个消息分别给出不同的反馈。
+多态是面向对象编程中的一个重要技术；
+使用多态的好处是，你可以不用考虑对象的类型，直">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《JavaScript设计模式与开发实战笔记一——— —— 模式基础》">
+<meta property="og:url" content="http://yoursite.com/2017/01/20/《JavaScript设计模式与开发实战笔记一———-——-模式基础》/index.html">
+<meta property="og:site_name" content="辣鸡的日常">
+<meta property="og:description" content="《JavaScript设计模式与开发实战笔记一 — 模式基础》@(记录)[读书笔记]
+一：简介JavaScript设计模式多态技术：**多态的实际含义是**：同一操作作用于不同的对象上面，可以产生不同的解释和不同的执行结果。
+换句话说就是给不同的对象发送同一个消息的时候，这些对象会根据这个消息分别给出不同的反馈。
+多态是面向对象编程中的一个重要技术；
+使用多态的好处是，你可以不用考虑对象的类型，直">
+<meta property="og:updated_time" content="2017-01-20T15:19:56.270Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《JavaScript设计模式与开发实战笔记一——— —— 模式基础》">
+<meta name="twitter:description" content="《JavaScript设计模式与开发实战笔记一 — 模式基础》@(记录)[读书笔记]
+一：简介JavaScript设计模式多态技术：**多态的实际含义是**：同一操作作用于不同的对象上面，可以产生不同的解释和不同的执行结果。
+换句话说就是给不同的对象发送同一个消息的时候，这些对象会根据这个消息分别给出不同的反馈。
+多态是面向对象编程中的一个重要技术；
+使用多态的好处是，你可以不用考虑对象的类型，直">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328385020167718000,
+      author: '辣鸡'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/20/《JavaScript设计模式与开发实战笔记一———-——-模式基础》/"/>
+
+  <title> 《JavaScript设计模式与开发实战笔记一——— —— 模式基础》 | 辣鸡的日常 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">辣鸡的日常</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">余生请指教 (滑稽脸</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《JavaScript设计模式与开发实战笔记一——— —— 模式基础》
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-20T22:43:39+08:00" content="2017-01-20">
+              2017-01-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/20/《JavaScript设计模式与开发实战笔记一———-——-模式基础》/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/《JavaScript设计模式与开发实战笔记一———-——-模式基础》/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-user"></i>本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="《JavaScript设计模式与开发实战笔记一-—-模式基础》"><a href="#《JavaScript设计模式与开发实战笔记一-—-模式基础》" class="headerlink" title="《JavaScript设计模式与开发实战笔记一 — 模式基础》"></a>《JavaScript设计模式与开发实战笔记一 — 模式基础》</h1><p>@(记录)[读书笔记]</p>
+<h2 id="一：简介JavaScript设计模式"><a href="#一：简介JavaScript设计模式" class="headerlink" title="一：简介JavaScript设计模式"></a>一：简介JavaScript设计模式</h2><h3 id="多态技术："><a href="#多态技术：" class="headerlink" title="多态技术："></a>多态技术：</h3><pre><code>**多态的实际含义是**：同一操作作用于不同的对象上面，可以产生不同的解释和不同的执行结果。
+换句话说就是给不同的对象发送同一个消息的时候，这些对象会根据这个消息分别给出不同的反馈。
+多态是面向对象编程中的一个重要技术；
+使用多态的好处是，你可以不用考虑对象的类型，直接使用对象的行为就可以了；
+</code></pre><a id="more"></a>
+<p>简单多态<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> makeSound = <span class="function"><span class="keyword">function</span>(<span class="params">animal</span>) </span>&#123;</div><div class="line">	animal.sound();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Duck = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Duck.prototype.sound = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'speak duck'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Dog = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Dog.prototype.sound = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'dog speak'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">makeSound(<span class="keyword">new</span> Duck());<span class="comment">//speak duck</span></div><div class="line">makeSound(<span class="keyword">new</span> Dog());<span class="comment">//dog speak</span></div></pre></td></tr></table></figure></p>
+<p>多态的思想实际上就是把“做什么”和“谁去做”分离开来。<br>JavaScript是弱类型语言，同时修改原型的方法会重写里面的方法，<br>不同于Java中多态继承，通过继续父类的方法，然后通过修改函数参数类型，数量来达到多态效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var googleMap = &#123;</div><div class="line">	show: function() &#123;</div><div class="line">		console.log(&apos;google&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var baiduMap = &#123;</div><div class="line">	show: function() &#123;</div><div class="line">		console.log(&apos;baidu&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var renderMap = function(type) &#123;</div><div class="line">	if (type == &apos;google&apos;) &#123;</div><div class="line">		googleMap.show();</div><div class="line">	&#125; else if (type == &apos;baidu&apos;) &#123;</div><div class="line">		baiduMap.show();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">renderMap(&apos;google&apos;);//google</div><div class="line">renderMap(&apos;baidu&apos;);//baidu，同一个函数，不同参数对应的行为不同</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//JavaScript中模拟数据的封装性：public，private</div><div class="line">var object = (function() &#123;</div><div class="line">	var __name = &apos;mewhat&apos;;			//在匿名立即执行函数中，外界不能访问里面的数据，相当于private</div><div class="line">	return &#123;						//返回的对象是给别人调用的，是公开的，所以相当于public</div><div class="line">		getName: function() &#123;</div><div class="line">			return __name;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>了解ECMAScript中的let和Symbol<br><a href="https://github.com/lukehoban/es6features" target="_blank" rel="external">https://github.com/lukehoban/es6features</a><br>封装不仅仅是隐藏数据，还有实现细节，设计细节已经隐藏对象的类型</p>
+</blockquote>
+<h3 id="介绍了prototype，原型模式"><a href="#介绍了prototype，原型模式" class="headerlink" title="介绍了prototype，原型模式"></a>介绍了prototype，原型模式</h3><h4 id="JavaScript遵循的原型编程规则："><a href="#JavaScript遵循的原型编程规则：" class="headerlink" title="JavaScript遵循的原型编程规则："></a>JavaScript遵循的原型编程规则：</h4><p><strong>1，所有的数据都是对象</strong><br>基本类型（undefined,number,boolean,string,function,object）<br>JavaScript中大多数数据是对象，而对象基本是基于Object对象创建的，<br>JavaScript中的根对象是Object.prototype对象。</p>
+<p>创建对象有两种方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var obj = new Object();</div><div class="line">//or</div><div class="line">var obj = &#123;&#125;;</div></pre></td></tr></table></figure></p>
+<p>Object提供创建对象的方法create<br>对象的创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Object.create = Object.create || function(obj) &#123;</div><div class="line">	var F = function()&#123;&#125;;</div><div class="line">	F.prototype = obj;</div><div class="line">	return new F();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj1 = new Object();</div><div class="line">var obj2 = &#123;&#125;;</div><div class="line">console.log(Object.getPrototypeOf(obj1) === Object.prototype);//true</div><div class="line">console.log(Object.getPrototypeOf(obj2) === Object.prototype);//true</div></pre></td></tr></table></figure>
+<p><strong>2，要得到一个对象，不是通过实例化，而是找到一个对象作为原型并克隆它</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Person(name) &#123;</div><div class="line">	this.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.getName = function() &#123;</div><div class="line">	return this.name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var a = new Person(&apos;sven&apos;);</div><div class="line">console.log(a.name);//sven</div><div class="line">console.log(a.getName());//sven</div><div class="line">console.log(Object.getPrototypeOf(a) === Person.prototype);//true</div></pre></td></tr></table></figure>
+<p>通过new调用Person构造函数创建一个对象，其实是先克隆Object.prototype然后在做一些<br>其他的额外操作（JavaScript是通过克隆Object.prototype来得到新对象，但实际上并不是每一次<br>都真正克隆了一个新的对象，从内存方面的考虑出发，JavaScript做了一些额外的处理，<br>具体细节可以看《JavaScript语言精髓与编程实践》）</p>
+<p><strong>3，对象会记住它的原型</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//__proto__属性指向对象的构造器的原型对象</div><div class="line">var a = new Object();</div><div class="line">console.log(a.__proto__ === Object.prototype);//true</div></pre></td></tr></table></figure></p>
+<p><strong>4，如果对对象无法响应某个请求，它会把这个请求委托给它自己的原型系统</strong><br>具体的说就是，对象中没有某个属性，就会沿着对象的原型链查找这个属性，直到Object.prototype，还是没有找到的话直接返回undefined</p>
+<h2 id="二：this，call，apply"><a href="#二：this，call，apply" class="headerlink" title="二：this，call，apply"></a>二：this，call，apply</h2><p>this可以参考之前写的这篇笔记<a href="https://mewhat.github.io/2016/12/12/JavaScript%E4%B8%ADthis%E7%9A%84%E7%94%A8%E6%B3%95/" target="_blank" rel="external">JavaScript中this的用法</a></p>
+<blockquote>
+<p>call和apply的区别主要是传参的不同，apply可以传递数组，而call只能一个个传递。<br>apply接收两个参数，第一个参数指定了函数体内this对象的指向，第二个参数为一个带下表的集合<br>当使用apply和call的时候，如果第一个参数是null，函数体内的this会指向默认的宿主对象，在浏览器中则是window</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var func = function(a,b,c) &#123;</div><div class="line">	console.log(this === window);</div><div class="line">&#125;</div><div class="line">func.apply(null, [1,2,3]);//true</div></pre></td></tr></table></figure>
+<p>严格模式下函数体内的this为null<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var func = function(a) &#123;</div><div class="line">	&quot;use strict&quot;</div><div class="line">	console.log(this === null);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用call，apply改变函数内this的指向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var it = 1;</div><div class="line">document.getElementsByTagName(&apos;body&apos;)[0].onclick = function() &#123;</div><div class="line">	var it = 0;</div><div class="line">	var func = function() &#123;</div><div class="line">		console.log(this.it);</div><div class="line">	&#125;</div><div class="line">	func();</div><div class="line">&#125;</div><div class="line">//在函数体内调用函数，则函数内的this指向window，所以输出1</div><div class="line">//改变指向</div><div class="line">document.getElementsByTagName(&apos;body&apos;)[0].onclick = function() &#123;</div><div class="line">	var func = function() &#123;</div><div class="line">		console.log(this);//指body这个节点</div><div class="line">	&#125;</div><div class="line">	func.call(this);//this指的是body这个节点</div><div class="line">&#125;</div><div class="line"></div><div class="line">//使用var self = this;保存匿名函数对象的引用</div></pre></td></tr></table></figure></p>
+<h2 id="三，闭包与高阶函数"><a href="#三，闭包与高阶函数" class="headerlink" title="三，闭包与高阶函数"></a>三，闭包与高阶函数</h2><blockquote>
+<p>所谓闭包就是在定义的作用域之外的地方调用这个作用域中的属性<br>常常的用法是结合匿名函数，在函数的内部定义一个函数。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">//在window作用域中通过call函数，调用extent作用域的value变量</div><div class="line">var extent = function() &#123;</div><div class="line">	var value = 0;</div><div class="line">	return &#123;</div><div class="line">		call: function() &#123;</div><div class="line">			value++;</div><div class="line">			console.log(value);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">var extent = extent();</div><div class="line">extent.call();//1</div><div class="line">extent.call();//2</div><div class="line">extent.call();//3</div><div class="line"></div><div class="line">//面向对象版本</div><div class="line">var extent = &#123;</div><div class="line">	value: 0,</div><div class="line">	call: function() &#123;</div><div class="line">		this.value++;</div><div class="line">		console.log(this.value);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">extent.call();//1</div><div class="line">extent.call();//2</div><div class="line">extent.call();//3</div><div class="line"></div><div class="line">//使用闭包</div><div class="line">var Tv = &#123;</div><div class="line">	open: function() &#123;</div><div class="line">		console.log(&quot;open tv&quot;);</div><div class="line">	&#125;,</div><div class="line">	close: function() &#123;</div><div class="line">		console.log(&quot;close tv&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var createCommand = function(receiver) &#123;</div><div class="line">	var execute = function() &#123;</div><div class="line">		return receiver.open();//执行命令，打开电视</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var undo = function() &#123;</div><div class="line">		return receiver.close();//执行命令，关闭电视</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return &#123;</div><div class="line">		execute: execute,</div><div class="line">		undo: undo</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var setCommand = function(command) &#123;</div><div class="line">	document.getElementsByTagName(&apos;body&apos;)[0].onclick = function() &#123;</div><div class="line">		command.execute();</div><div class="line">	&#125;</div><div class="line">	document.getElementsByTagName(&apos;body&apos;)[0].onclick = function () &#123;</div><div class="line">		command.undo();</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">setCommand(createCommand(Tv));</div><div class="line"></div><div class="line">//使用闭包封装变量</div><div class="line">var mult = (function() &#123;</div><div class="line">	var cache = &#123;&#125;;//设置缓存，避免重复计算</div><div class="line">	var calculate = function() &#123;//封闭calculate函数。可复用的小函数提取出来用闭包封装</div><div class="line">		var a = 1;</div><div class="line">		for(var i = 0,l = arguments.length; i &lt; l; i++) &#123;</div><div class="line">			a = a * arguments[i];</div><div class="line">		&#125;</div><div class="line">		return a;</div><div class="line">	&#125;</div><div class="line">	return function() &#123;</div><div class="line">		var args = Array.prototype.join.call(arguments, &apos;,&apos;);//arguments对象调用Array的join方法</div><div class="line">		if (args in cache) &#123;</div><div class="line">			return cache[args];</div><div class="line">		&#125;</div><div class="line">		return cache[args] = calculate.apply(null, arguments);</div><div class="line">	&#125;</div><div class="line">&#125;)();</div><div class="line">console.log(mult(1,2,3));</div><div class="line"></div><div class="line">//延长局部变量的寿命</div><div class="line">var report = function(src) &#123;</div><div class="line">	var img = new Image();</div><div class="line">	img.src = src;</div><div class="line">&#125;</div><div class="line">report(&apos;http://xxx.com/getUserInfo&apos;);</div></pre></td></tr></table></figure>
+<p><strong>eg:</strong><br>为了解决img（new Image()）上传丢失的问题（img是report函数中的局部变量，当report函数的调用结束后，img局部变量随即被销毁，而此时回去还没来得及发出HTTP请求，所以这次请求就会丢失）。使用闭包封装img，立即调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var report = (function() &#123;</div><div class="line">	var imgs = [];</div><div class="line">	return function(src) &#123;</div><div class="line">		var img = new Image();</div><div class="line">		imgs.push(img);</div><div class="line">		img.src = src;</div><div class="line">	&#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>###高阶函数<br>1，函数可以作为参数被传递<br>2，函数可以作为返回值输出</p>
+<p>把函数作为参数传递，代表我们可以抽离一部分容易变化的业务逻辑，<br>把这部分逻辑放在函数参数中。</p>
+<p>ajax中使用回调函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var getUserInfo = function(userId, callback) &#123;</div><div class="line">	$.ajax(&apos;/path?&apos; + userId, function(data) &#123;</div><div class="line">		callback(data);</div><div class="line">	&#125;);</div><div class="line">&#125;</div><div class="line">getUserInfo(12456, function(data) &#123;</div><div class="line">	console.log(data.username);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>高阶函数实现AOP    (面向切面编程，主要作用是把一些跟核心业务逻辑模块无关的功能抽离出来)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">Function.prototype.before = function(beforeFn) &#123;</div><div class="line">	var _self = this;							//保存原函数的引用</div><div class="line">	return function() &#123;							//返回包含了原函数和新函数的代理函数</div><div class="line">		beforeFn.apply(this, arguments);		//执行新的函数，修正this</div><div class="line">		return _self.apply(this, arguments);	//执行原函数</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Function.prototype.after = function(afterFn) &#123;</div><div class="line">	var _self = this;</div><div class="line">	return function() &#123;</div><div class="line">		var ret = _self.apply(this, arguments);</div><div class="line">		afterFn.apply(this, arguments);</div><div class="line">		return ret;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var func = function() &#123;</div><div class="line">	console.log(2);</div><div class="line">&#125;</div><div class="line"></div><div class="line">func = func.before(function() &#123;</div><div class="line">	console.log(1);</div><div class="line">&#125;).after(function() &#123;</div><div class="line">	console.log(3);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">func();</div><div class="line">//1</div><div class="line">//2</div><div class="line">//3</div></pre></td></tr></table></figure></p>
+<p>函数的柯力化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">var currying = function(fn) &#123;</div><div class="line">	var args = [];</div><div class="line"></div><div class="line">	return function() &#123;</div><div class="line">		if (arguments.length === 0) &#123;</div><div class="line">			return fn.apply(this,args);		//如果函数没有参数，则求args中的和</div><div class="line">		&#125; else &#123;							//如果函数有参数，则args数组对象借用push方法，将arguments数组的值传递进args数组中</div><div class="line">			[].push.apply(args, arguments);</div><div class="line">			return arguments.callee;		//递归调用arguments</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var cost = (function() &#123;</div><div class="line">	var money = 0;</div><div class="line"></div><div class="line">	return function() &#123;</div><div class="line">		for(var i = 0, l = arguments.length;i &lt; l; i++) &#123;</div><div class="line">			money += arguments[i];</div><div class="line">		&#125;</div><div class="line">		return money;</div><div class="line">	&#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">var cost = currying(cost);//转化为柯里函数</div><div class="line"></div><div class="line">cost(100);</div><div class="line">cost(200);</div><div class="line">cost(300);</div><div class="line"></div><div class="line">console.log(cost());    //求值，输出600；</div></pre></td></tr></table></figure></p>
+<p>非柯里化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">(function() &#123;</div><div class="line">	Array.prototype.push.call(arguments, 4);//arguments借用Array.prototype.push 方法</div><div class="line">	console.log(arguments);</div><div class="line">&#125;)([1,2,3]);</div><div class="line"></div><div class="line"></div><div class="line">Function.prototype.uncurrying = function() &#123;</div><div class="line">	var _self = this;</div><div class="line"></div><div class="line">	return function() &#123;</div><div class="line">		var obj = Array.prototype.shift.call(arguments);</div><div class="line">		return _self.apply(obj, arguments);</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>通过函数节流提高JavaScript的性能。（事实上可以通过setTimeout来实现，规定时间间隔只触发什么事件），其实就是限制函数被频繁调用。</p>
+<p><strong>eg:</strong><br>函数节流代码：原理是，将即将被执行的函数用setTimeout延迟一段时间执行。如果这次延迟执行还没有完成，则忽略接下来调用该函数的请求。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var throttle = function(fn, interval) &#123;</div><div class="line">	var _self = fn,				//保存需要被延迟执行的函数</div><div class="line">		timer,					//定时器</div><div class="line">		firstTime = true;		//是否是第一次调用</div><div class="line"></div><div class="line">	return function() &#123;</div><div class="line">		var args = arguments,</div><div class="line">			_me = this;</div><div class="line"></div><div class="line">		if (firstTime) &#123;				//如果是第一次调用，不需要延迟执行</div><div class="line">			_self.apply(_me, args);</div><div class="line">			return firstTime = false;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		if (timer) &#123;					//如果定时器还在，说明前一次延迟执行还没有完成</div><div class="line">			return false;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		timer = setTimeout(function() &#123;	//延迟一段时间执行</div><div class="line">			clearTimeout(timer);</div><div class="line">			timer = null;</div><div class="line">			_self.apply(_me, args);</div><div class="line">		&#125;, interval || 500);</div><div class="line">	&#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">window.onresize = throttle(function() &#123;</div><div class="line">	console.log(1);</div><div class="line">&#125;,500);</div></pre></td></tr></table></figure>
+<p>创建大量DOM造成卡顿的解决方案；（规定时间内创建多少个DOM节点）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var timeChunk = function(ary, fn, count) &#123;</div><div class="line">	var obj,</div><div class="line">		t;</div><div class="line">	var len = ary.length;</div><div class="line"></div><div class="line">	var start = function() &#123;</div><div class="line">	 	for(var i = 0; i &lt; Math.min(count || a, ary.length); i++) &#123;</div><div class="line">	 		var obj = ary.shift();</div><div class="line">	 		fn(obj);</div><div class="line">	 	&#125;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	return function() &#123;</div><div class="line">		t = setInterval(function() &#123;</div><div class="line">			if (ary.length === 0) &#123;			//如果全部节点都已经被创建好了</div><div class="line">				return clearInterval(t);</div><div class="line">			&#125;</div><div class="line">			start();</div><div class="line">		&#125;, 200);							//分批执行的时间间隔，也可以用参数的形式传入</div><div class="line">	&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>测试test：<br>需要创建1000个节点，每批创建8个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var ary = [];</div><div class="line"></div><div class="line">for(var i = 1; i &lt; 1000; i++) &#123;</div><div class="line">	arr.push(i);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var renderFriendList = timeChunk(ary, function(n) &#123;</div><div class="line">	var div = document.createElement(&apos;div&apos;);</div><div class="line">	div.innerHTML = n;</div><div class="line">	document.body.appendChild(div);</div><div class="line">&#125;, 8);</div><div class="line"></div><div class="line">renderFriendList();</div></pre></td></tr></table></figure></p>
+<p>惰性加载函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">//添加事件</div><div class="line">var addEvent = function(elem, type, handler) &#123;</div><div class="line">	if (window.addEventListener) &#123;</div><div class="line">		return elem.addEventListener(type, handler, false);</div><div class="line">	&#125;</div><div class="line">	if (window.attachEvent) &#123;</div><div class="line">		return elem.attachEvent(&apos;on&apos; + type, handler);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//提前到代码加载的时候就判断</div><div class="line">var addEvent = (function() &#123;</div><div class="line">	if (window.addEventListener) &#123;</div><div class="line">		return function(elem, type, handler) &#123;</div><div class="line">			elem.addEventListener(type, handler, false);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if (window.attachEvent) &#123;</div><div class="line">		return function(elem, type, handler) &#123;</div><div class="line">			elem.attachEvent(&apos;on&apos; + type, handler, false);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)</div><div class="line">//惰性加载（判断内重写函数，条件判断不再存在）</div><div class="line">var addEvent = function(elem, type, handler) &#123;</div><div class="line">	if (window.addEventListener) &#123;</div><div class="line">		addEvent = function(elem, type, handler) &#123;</div><div class="line">			elem.addEventListener(type, handler, false);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if (window.attachEvent) &#123;</div><div class="line">		addEvent = function(elem, type, handler) &#123;</div><div class="line">			elem.attachEvent(type, handler, false);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>PS: 寒假的任务一《JavaScript设计模式与开发实战》已经完成了，所以最近在整理一些相关模式的笔记，再次吸收消化。<br>下一步是《单页Web应用——JavaScript从前端到后端》<br>我只是希望自己在寒假这么长的时间里保持状态，保持学习的那股劲，虽然寒假家里效率不高，但是鸡汤喝多了，是需要消化的。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mewhat Chen WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mewhat Chen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/07/HTTP状态码/" rel="next" title="HTTP状态码">
+                <i class="fa fa-chevron-left"></i> HTTP状态码
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/20/《JavaScript设计模式与开发实战笔记一———-——-模式基础》/"
+           data-title="《JavaScript设计模式与开发实战笔记一——— —— 模式基础》" data-url="http://yoursite.com/2017/01/20/《JavaScript设计模式与开发实战笔记一———-——-模式基础》/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oemsj8g9f.bkt.clouddn.com/avatar.png"
+               alt="Mewhat Chen" />
+          <p class="site-author-name" itemprop="name">Mewhat Chen</p>
+          <p class="site-description motion-element" itemprop="description">Javascript | Python | Node</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mewhat" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/mewhat" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#《JavaScript设计模式与开发实战笔记一-—-模式基础》"><span class="nav-number">1.</span> <span class="nav-text">《JavaScript设计模式与开发实战笔记一 — 模式基础》</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一：简介JavaScript设计模式"><span class="nav-number">1.1.</span> <span class="nav-text">一：简介JavaScript设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多态技术："><span class="nav-number">1.1.1.</span> <span class="nav-text">多态技术：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍了prototype，原型模式"><span class="nav-number">1.1.2.</span> <span class="nav-text">介绍了prototype，原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript遵循的原型编程规则："><span class="nav-number">1.1.2.1.</span> <span class="nav-text">JavaScript遵循的原型编程规则：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二：this，call，apply"><span class="nav-number">1.2.</span> <span class="nav-text">二：this，call，apply</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，闭包与高阶函数"><span class="nav-number">1.3.</span> <span class="nav-text">三，闭包与高阶函数</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mewhat Chen</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i>本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i>本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"iissnan-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
