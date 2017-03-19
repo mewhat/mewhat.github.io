@@ -1,0 +1,719 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="记一次面试@(记录)[面试]
+上周四从广州跑到深圳面试一个实习，一直关注的一个公司，也是大学以来第二个面试，关于前端的第一个面试，还是很紧张，准备也不是很充分，再次证明基础很不好，实力还不强。。。。
+
+公司在22楼，我跑到2楼问。。。最后才知道有22楼，哎，读书少见识短。。。
+进公司之后是等hr姐姐（说话非常可爱），因为有人已经在面试了，所以等了一会儿，然后就是到办公室里面做笔试，忘记几道题了，有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次面试">
+<meta property="og:url" content="http://yoursite.com/2017/03/19/记一次面试/index.html">
+<meta property="og:site_name" content="辣鸡的日常">
+<meta property="og:description" content="记一次面试@(记录)[面试]
+上周四从广州跑到深圳面试一个实习，一直关注的一个公司，也是大学以来第二个面试，关于前端的第一个面试，还是很紧张，准备也不是很充分，再次证明基础很不好，实力还不强。。。。
+
+公司在22楼，我跑到2楼问。。。最后才知道有22楼，哎，读书少见识短。。。
+进公司之后是等hr姐姐（说话非常可爱），因为有人已经在面试了，所以等了一会儿，然后就是到办公室里面做笔试，忘记几道题了，有">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E7%B4%A0%E6%95%B01.png">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E7%B4%A0%E6%95%B02.png">
+<meta property="og:updated_time" content="2017-03-19T11:36:26.147Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记一次面试">
+<meta name="twitter:description" content="记一次面试@(记录)[面试]
+上周四从广州跑到深圳面试一个实习，一直关注的一个公司，也是大学以来第二个面试，关于前端的第一个面试，还是很紧张，准备也不是很充分，再次证明基础很不好，实力还不强。。。。
+
+公司在22楼，我跑到2楼问。。。最后才知道有22楼，哎，读书少见识短。。。
+进公司之后是等hr姐姐（说话非常可爱），因为有人已经在面试了，所以等了一会儿，然后就是到办公室里面做笔试，忘记几道题了，有">
+<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/%E7%B4%A0%E6%95%B01.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328385020167718000,
+      author: '辣鸡'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/19/记一次面试/"/>
+
+  <title> 记一次面试 | 辣鸡的日常 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">辣鸡的日常</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">余生请指教 (滑稽脸</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                记一次面试
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-19T17:57:57+08:00" content="2017-03-19">
+              2017-03-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/19/记一次面试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/19/记一次面试/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-user"></i>本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="记一次面试"><a href="#记一次面试" class="headerlink" title="记一次面试"></a>记一次面试</h1><p>@(记录)[面试]</p>
+<p>上周四从广州跑到深圳面试一个实习，一直关注的一个公司，也是大学以来第二个面试，关于前端的第一个面试，还是很紧张，准备也不是很充分，再次证明基础很不好，实力还不强。。。。</p>
+<hr>
+<p>公司在22楼，我跑到2楼问。。。<br>最后才知道有22楼，哎，读书少见识短。。。</p>
+<p>进公司之后是等hr姐姐（说话非常可爱），因为有人已经在面试了，所以等了一会儿，然后就是到办公室里面做笔试，忘记几道题了，有简答（typeof可能的值，模块化是什么，什么是跨域，说出你知道的办法。。。），算法是求素数（我写成求偶数了。。。大脑短路，后来技术面的时候一说我就意识到写少一个循环了，而且又两个办法，直接求素数和晒素数出来），常见的设计模式并实现其中一种，两个模块的引用会发生什么，怎么解决（没仔细思考，技术面的时候提到了代码耦合），关于原型继承和重写函数。。。大概就记得这些笔试题了。面试分为笔试（30min）——技术面——hr面，最后hr姐姐很热心得问了各种问题，然后说和技术官商量后再给我回复（全程2h）。</p>
+<ul>
+<li><p>typeof可能输出的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span>;<span class="comment">// object</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>;<span class="comment">// undefined</span></div><div class="line"><span class="keyword">typeof</span> <span class="number">123</span>;<span class="comment">// number</span></div><div class="line"><span class="keyword">typeof</span> <span class="string">'123'</span>;<span class="comment">// string</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span>;<span class="comment">// boolean</span></div><div class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;<span class="comment">// function</span></div><div class="line"><span class="keyword">typeof</span> &#123;&#125;;<span class="comment">// object</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>跨域<br><strong>浏览器对于javascript的同源策略的限制，例如a.cn下面的js不能调用b.cn中的js，对象或数据(因为a.cn和b.cn是不同域，所以跨域就出现了，同源策略：请求的url地址，必须与浏览器上的url地址处于同域上，也就是域名，端口，协议相同。。。我的回答是除了通协议域名端口的其他资源都是跨域</strong><br>办法：<br>jsonp，iframe，curs，window.domain<br><a href="http://blog.csdn.net/wm_1991/article/details/52160861" target="_blank" rel="external">详解js跨域问题</a><br><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解</a><br><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="external">浏览器同源政策及其规避方法</a><br><a href="http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html" target="_blank" rel="external">XMLHttpRequest Level 2 使用指南</a></p>
+</li>
+<li><p>求10000以内的素数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//穷举法O(n*n)</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prime</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">2</span>; i &lt;=<span class="number">10000</span>; i++) &#123;</div><div class="line">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">var</span> re = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.sqrt(i));</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">2</span>; j &lt;= re; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (i % j === <span class="number">0</span>) &#123;</div><div class="line">                flag = <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (flag) &#123;</div><div class="line">            result.push(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line">prime();<span class="comment">//10000内的素数有1229个</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://oemsj8g9f.bkt.clouddn.com/%E7%B4%A0%E6%95%B01.png" alt="素数1"><br><img src="http://oemsj8g9f.bkt.clouddn.com/%E7%B4%A0%E6%95%B02.png" alt="素数2"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//筛素数法（O(m*n)）</div><div class="line">function prime2(size) &#123;</div><div class="line">    var result = [false,false,true];</div><div class="line">    var items = [];</div><div class="line">    for (var i = 3; i &lt;= size; i+=2) &#123;</div><div class="line">        result[i] = true;</div><div class="line">    &#125;</div><div class="line">    for (var i = 3; i &lt; size; i++) &#123;</div><div class="line">        if (result[i]) &#123;</div><div class="line">            var item = 2;</div><div class="line">            while(item * i &lt;= size) &#123;</div><div class="line">                result[item * i] = false;</div><div class="line">                item++;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line">    for (var i = 0; i &lt; result.length; i++) &#123;</div><div class="line">        if (result[i]) &#123;</div><div class="line">            items.push(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return items;</div><div class="line">&#125;</div><div class="line">prime2(10000);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>常见设计模式<br><strong>单例模式，观察者模式，适配器模式，代理模式</strong><br>实现单例模式，通过getInstance方法返回单例<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//当时只是简单的一个单例，其实有看过《JavaScript设计模式与开发实践》，看来不常用的东西真的会不记得。。。。。</div><div class="line">function instance() &#123;</div><div class="line">    var item = [];</div><div class="line">    var instance = null;</div><div class="line">&#125;</div><div class="line"></div><div class="line">instance.getInstance = function() &#123;</div><div class="line">    if (!this.instance) &#123;</div><div class="line">        this.instance = new instance();</div><div class="line">    &#125;</div><div class="line">    return this.instance;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://mewhat.github.io/2017/01/20/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" target="_blank" rel="external">单例模式</a><br><a href="https://mewhat.github.io/2017/01/21/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" target="_blank" rel="external">策略模式</a><br><a href="https://mewhat.github.io/2017/01/21/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" target="_blank" rel="external">代理模式</a><br>。。。。。。</p>
+<ul>
+<li><p>原型继承并重写方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var item1 = function()&#123;&#125;;</div><div class="line">var item2 = function()&#123;&#125;;</div><div class="line">item1.prototype.fun = function() &#123;</div><div class="line">    console.log(&apos;read&apos;);</div><div class="line">&#125;;</div><div class="line">item2.prototype = new item1();</div><div class="line">item2.prototype.fun = function () &#123;</div><div class="line">    console.log(&apos;read again&apos;);</div><div class="line">&#125;</div><div class="line">var i = new item1();</div><div class="line">var j = new item2();</div><div class="line">i.fun();//read</div><div class="line">j.fun();//read again</div></pre></td></tr></table></figure>
+</li>
+<li><p>两个模块的引用会发生什么，怎么解决<br>循环引用导致模块代码不能正常运行（强耦合）<br>办法：<br><a href="http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html" target="_blank" rel="external">JavaScript 模块的循环加载</a></p>
+</li>
+</ul>
+<p>技术面的时候是两个年轻的帅哥，他们以为我是社招的。。。结果我说我是实习的，他们才看到简历。。。<br>然后问了很基础的css，bfc，设计模式，项目最喜欢哪个，vuex用没有用到项目里面，父子组件通信，非父子组件通信（原理）（监听，出发，on,emit）这里跪的很惨看到面试官一脸无奈。。。Orz。。。渐变条平铺背景，聊天气泡实现（圆角切成图片，css实现（伪元素中使用border-radius）），Promise的原理好处（异步调用，同步写法），Promise的方法用过几个有哪些（只说了then，all。。。Orz），播放器使用fetch请求数据好处（不用考虑跨域）</p>
+<p>HR面是笔试带我进去的姐姐，人很好，聊着聊着就聊开了，未来是否考虑深圳发展，大三的话没有课上吗？职业规划？有考虑做产品经理吗？全栈发展？性格怎么样啊（我说熟悉的话会聊得很好，然后她说和我刚刚笔试的时候简直像是两个人。。。Orz），还聊了很多，问我面试过后去哪，我说去深大找同学什么的，小姐姐也是深大的，，说话好可爱。。。Orz。。还在等结果。。。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mewhat Chen WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mewhat Chen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/21/代理模式/" rel="next" title="代理模式">
+                <i class="fa fa-chevron-left"></i> 代理模式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/19/记一次面试/"
+           data-title="记一次面试" data-url="http://yoursite.com/2017/03/19/记一次面试/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oemsj8g9f.bkt.clouddn.com/avatar.png"
+               alt="Mewhat Chen" />
+          <p class="site-author-name" itemprop="name">Mewhat Chen</p>
+          <p class="site-description motion-element" itemprop="description">Javascript | Python | Node</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mewhat" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/mewhat" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#记一次面试"><span class="nav-number">1.</span> <span class="nav-text">记一次面试</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mewhat Chen</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i>本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i>本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"iissnan-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
