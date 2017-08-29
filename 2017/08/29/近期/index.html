@@ -1,0 +1,701 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vue," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="近期问题总结和思考前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐； vue 如何细粒度开发如何解耦vue的开发如何处理多业务场景和项目基础架构组件的关系vue异步更新vue源码阅读vue MVVM中observe dep watcher的源码阅读vue Virtual DOM 在比较更新新旧DOM的时候做了什么 Diff函数">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="近期">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/近期/index.html">
+<meta property="og:site_name" content="辣鸡的日常">
+<meta property="og:description" content="近期问题总结和思考前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐； vue 如何细粒度开发如何解耦vue的开发如何处理多业务场景和项目基础架构组件的关系vue异步更新vue源码阅读vue MVVM中observe dep watcher的源码阅读vue Virtual DOM 在比较更新新旧DOM的时候做了什么 Diff函数">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-29T06:49:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="近期">
+<meta name="twitter:description" content="近期问题总结和思考前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐； vue 如何细粒度开发如何解耦vue的开发如何处理多业务场景和项目基础架构组件的关系vue异步更新vue源码阅读vue MVVM中observe dep watcher的源码阅读vue Virtual DOM 在比较更新新旧DOM的时候做了什么 Diff函数">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328385020167718000,
+      author: '辣鸡'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/29/近期/"/>
+
+  <title> 近期 | 辣鸡的日常 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">辣鸡的日常</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">余生请指教 (滑稽脸</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                近期
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-29T14:47:39+08:00" content="2017-08-29">
+              2017-08-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/08/29/近期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/29/近期/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-user"></i>本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="近期问题总结和思考"><a href="#近期问题总结和思考" class="headerlink" title="近期问题总结和思考"></a>近期问题总结和思考</h1><h2 id="前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐；"><a href="#前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐；" class="headerlink" title="前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐；"></a>前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐；</h2><blockquote>
+<p>vue 如何细粒度开发<br>如何解耦vue的开发<br>如何处理多业务场景和项目基础架构组件的关系<br>vue异步更新<br>vue源码阅读<br>vue MVVM中observe dep watcher的源码阅读<br>vue Virtual DOM 在比较更新新旧DOM的时候做了什么 Diff函数               </p>
+</blockquote>
+<h3 id="在vue如何细粒度开发问题上，查阅博客，关于细粒度和粗粒度的区分"><a href="#在vue如何细粒度开发问题上，查阅博客，关于细粒度和粗粒度的区分" class="headerlink" title="在vue如何细粒度开发问题上，查阅博客，关于细粒度和粗粒度的区分"></a>在vue如何细粒度开发问题上，查阅博客，关于细粒度和粗粒度的区分</h3><blockquote>
+<p>粗粒度的开发，是在功能模块的开发，比如权限设计，权限管理……某个用户的特定的模块的权限控制，就是粗粒度开发;<br>细粒度开发就是数据级的开发，到数据层的开发，比如vuex就是vue中细粒度开发的体现;<br>vuex相当于一个store，或者是一个全局的global，可以管理全局的状态，优点是只能通过getter，setter来修改和获取vuex中的状态；<br>但是有一个问题，vuex中的数据在用户刷新的时候是不存在的，就是说在用户通过vuex中的user_id获取到用户的data之后，如果页面刷新之后是根据user_id来再次获取数据的话，获取到的user_id是undefined;</p>
+</blockquote>
+<h4 id="之前有过一个关于vuex刷新数据为空的总结："><a href="#之前有过一个关于vuex刷新数据为空的总结：" class="headerlink" title="之前有过一个关于vuex刷新数据为空的总结："></a>之前有过一个关于vuex刷新数据为空的总结：</h4><hr>
+<blockquote>
+<p>2017-05-08</p>
+<h4 id="Vuex保存数据刷新后清空的问题"><a href="#Vuex保存数据刷新后清空的问题" class="headerlink" title="Vuex保存数据刷新后清空的问题"></a>Vuex保存数据刷新后清空的问题</h4><p>在vuex的state中设置变量进行全局管理，但是在页面刷新之后数据会变成state初始化时候的数据，所以数据只是暂时存的，刷新之后就会改变，所以需要保存到浏览器缓存或者session中。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import Vuex from &apos;vuex&apos;</div><div class="line">import * as actions from &apos;./actions&apos;</div><div class="line">import * as getters from &apos;./getters&apos;</div><div class="line"></div><div class="line">Vue.use(Vuex)</div><div class="line"></div><div class="line">// 应用初始状态</div><div class="line">const state = &#123;</div><div class="line">    count: 10,</div><div class="line">    token: sessionStorage.getItem(&apos;token&apos;) || &apos;&apos;,</div><div class="line">    id: sessionStorage.getItem(&apos;id&apos;) || 0</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 定义所需的 mutations</div><div class="line">const mutations = &#123;</div><div class="line">    INCREMENT(state) &#123;</div><div class="line">        state.count++</div><div class="line">    &#125;,</div><div class="line">    DECREMENT(state) &#123;</div><div class="line">        state.count--</div><div class="line">    &#125;,</div><div class="line">    SETTOKEN(state, token) &#123;</div><div class="line">        state.token = token</div><div class="line">        sessionStorage.setItem(&apos;token&apos;, token)</div><div class="line">    &#125;,</div><div class="line">    DRIVERID(state, id) &#123;</div><div class="line">        state.id = id</div><div class="line">        sessionStorage.setItem(&apos;id&apos;, id)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 创建 store 实例</div><div class="line">export default new Vuex.Store(&#123;</div><div class="line">    actions,</div><div class="line">    getters,</div><div class="line">    state,</div><div class="line">    mutations</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="如何解耦vue的开发"><a href="#如何解耦vue的开发" class="headerlink" title="如何解耦vue的开发"></a>如何解耦vue的开发</h3><blockquote>
+<p>首先就是要理解什么是解耦：我的理解是，做自己的事，尽可能少的和其他模块建立强联合关系；        </p>
+<h4 id="在vue的开发中，解耦最大的办法是，合理分工，model，view层的分工，model就只关心数据的处理，view层就只关心视图的显示；高耦合的就是你在model里面去处理view的显示，使用jq控制dom…；还有一个点就是组件化开发，把可能会用到的组件抽象出来，封装成独立的组件，父子组件的交流，只关系props，data的关系，而不必关系各自view到底是什么，slot插槽也是解耦的一个好办法；-完全的解耦是不可能的，只能做到model只关心model数据处理，view只关心视图显示"><a href="#在vue的开发中，解耦最大的办法是，合理分工，model，view层的分工，model就只关心数据的处理，view层就只关心视图的显示；高耦合的就是你在model里面去处理view的显示，使用jq控制dom…；还有一个点就是组件化开发，把可能会用到的组件抽象出来，封装成独立的组件，父子组件的交流，只关系props，data的关系，而不必关系各自view到底是什么，slot插槽也是解耦的一个好办法；-完全的解耦是不可能的，只能做到model只关心model数据处理，view只关心视图显示" class="headerlink" title="在vue的开发中，解耦最大的办法是，合理分工，model，view层的分工，model就只关心数据的处理，view层就只关心视图的显示；高耦合的就是你在model里面去处理view的显示，使用jq控制dom…；还有一个点就是组件化开发，把可能会用到的组件抽象出来，封装成独立的组件，父子组件的交流，只关系props，data的关系，而不必关系各自view到底是什么，slot插槽也是解耦的一个好办法；(完全的解耦是不可能的，只能做到model只关心model数据处理，view只关心视图显示)"></a>在vue的开发中，解耦最大的办法是，合理分工，model，view层的分工，model就只关心数据的处理，view层就只关心视图的显示；高耦合的就是你在model里面去处理view的显示，使用jq控制dom…；还有一个点就是组件化开发，把可能会用到的组件抽象出来，封装成独立的组件，父子组件的交流，只关系props，data的关系，而不必关系各自view到底是什么，slot插槽也是解耦的一个好办法；(完全的解耦是不可能的，只能做到model只关心model数据处理，view只关心视图显示)</h4></blockquote>
+<h3 id="如何处理多业务场景和项目基础架构组件的关系"><a href="#如何处理多业务场景和项目基础架构组件的关系" class="headerlink" title="如何处理多业务场景和项目基础架构组件的关系"></a>如何处理多业务场景和项目基础架构组件的关系</h3><blockquote>
+<p>不懂，这是什么鬼；<br>但是项目基础架构，组件都好，都是为业务服务，多业务是多种场景的业务？高度抽象的组件，解耦的组件，不关心外部数据，只在乎某个业务场景的业务得到的组件，也就是说基础架构组件要细化组件的封装；比如FPOS上订单组件，订单可能是一个web页面，可能是一个dialog弹出层，也可能是其他的，同时，订单可以有多种订单形式；不可能写一个增加需求业务之后就大幅度修改的组件，所以必须将组件细化，通用的基础框架可以在组件内再生组件；（2017-08-29）</p>
+</blockquote>
+<h3 id="vue异步更新"><a href="#vue异步更新" class="headerlink" title="vue异步更新"></a>vue异步更新</h3><h4 id="异步更新队列"><a href="#异步更新队列" class="headerlink" title="异步更新队列"></a>异步更新队列</h4><ul>
+<li>当你设置 vm.someData = ‘new value’ ，该组件不会立即重新渲染。当刷新队列时，组件会在事件循环队列清空时的下一个“tick”更新。多数情况我们不需要关心这个过程，但是如果你想在 DOM 状态更新后做点什么，这就可能会有些棘手。虽然 Vue.js 通常鼓励开发人员沿着“数据驱动”的方式思考，避免直接接触 DOM，但是有时我们确实要这么做。为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用 Vue.nextTick(callback) 。这样回调函数在 DOM 更新完成后就会调用。例如：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;example&apos;, &#123;</div><div class="line">  template: &apos;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&apos;,</div><div class="line">  data: function () &#123;</div><div class="line">    return &#123;</div><div class="line">      message: &apos;not updated&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    updateMessage: function () &#123;</div><div class="line">      this.message = &apos;updated&apos;</div><div class="line">      console.log(this.$el.textContent) // =&gt; &apos;没有更新&apos;</div><div class="line">      this.$nextTick(function () &#123;</div><div class="line">        console.log(this.$el.textContent) // =&gt; &apos;更新完成&apos;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>暂时是这些了。。。现在再一步步阅读源码；深入浅出NodeJS</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Mewhat Chen WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="Mewhat Chen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag">#Vue</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/29/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/08/29/近期/"
+           data-title="近期" data-url="http://yoursite.com/2017/08/29/近期/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oemsj8g9f.bkt.clouddn.com/avatar.png"
+               alt="Mewhat Chen" />
+          <p class="site-author-name" itemprop="name">Mewhat Chen</p>
+          <p class="site-description motion-element" itemprop="description">Javascript | Python | Node</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mewhat" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/mewhat" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#近期问题总结和思考"><span class="nav-number">1.</span> <span class="nav-text">近期问题总结和思考</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐；"><span class="nav-number">1.1.</span> <span class="nav-text">前段时间一个朋友提到了几个关于vue开发时候的问题，看了一下，没有一个是懂得，甚是惶恐；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在vue如何细粒度开发问题上，查阅博客，关于细粒度和粗粒度的区分"><span class="nav-number">1.1.1.</span> <span class="nav-text">在vue如何细粒度开发问题上，查阅博客，关于细粒度和粗粒度的区分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#之前有过一个关于vuex刷新数据为空的总结："><span class="nav-number">1.1.1.1.</span> <span class="nav-text">之前有过一个关于vuex刷新数据为空的总结：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vuex保存数据刷新后清空的问题"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Vuex保存数据刷新后清空的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何解耦vue的开发"><span class="nav-number">1.1.2.</span> <span class="nav-text">如何解耦vue的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在vue的开发中，解耦最大的办法是，合理分工，model，view层的分工，model就只关心数据的处理，view层就只关心视图的显示；高耦合的就是你在model里面去处理view的显示，使用jq控制dom…；还有一个点就是组件化开发，把可能会用到的组件抽象出来，封装成独立的组件，父子组件的交流，只关系props，data的关系，而不必关系各自view到底是什么，slot插槽也是解耦的一个好办法；-完全的解耦是不可能的，只能做到model只关心model数据处理，view只关心视图显示"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">在vue的开发中，解耦最大的办法是，合理分工，model，view层的分工，model就只关心数据的处理，view层就只关心视图的显示；高耦合的就是你在model里面去处理view的显示，使用jq控制dom…；还有一个点就是组件化开发，把可能会用到的组件抽象出来，封装成独立的组件，父子组件的交流，只关系props，data的关系，而不必关系各自view到底是什么，slot插槽也是解耦的一个好办法；(完全的解耦是不可能的，只能做到model只关心model数据处理，view只关心视图显示)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何处理多业务场景和项目基础架构组件的关系"><span class="nav-number">1.1.3.</span> <span class="nav-text">如何处理多业务场景和项目基础架构组件的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue异步更新"><span class="nav-number">1.1.4.</span> <span class="nav-text">vue异步更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异步更新队列"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">异步更新队列</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mewhat Chen</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i>本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i>本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"iissnan-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

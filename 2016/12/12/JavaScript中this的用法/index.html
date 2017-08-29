@@ -83,25 +83,18 @@
 
 
 
-<meta name="description" content="JavaScript中this的运用@(笔记)[JavaScript]
-this关键字是JavaScript中最复杂的机制之一。它是一个很特别的关键字，被自动定义在所有函数作用域中。但是即便是经验丰富的JavaScript开发者也很难说清它到底指向什么：
-
-任何足够先进的技术都和魔法无异。   ——Archur C.Clarke">
+<meta name="description" content="JavaScript中this的运用@(笔记)[JavaScript] this关键字是JavaScript中最复杂的机制之一。它是一个很特别的关键字，被自动定义在所有函数作用域中。但是即便是经验丰富的JavaScript开发者也很难说清它到底指向什么：  任何足够先进的技术都和魔法无异。   ——Archur C.Clarke">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中this的用法">
 <meta property="og:url" content="http://yoursite.com/2016/12/12/JavaScript中this的用法/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="JavaScript中this的运用@(笔记)[JavaScript]
-this关键字是JavaScript中最复杂的机制之一。它是一个很特别的关键字，被自动定义在所有函数作用域中。但是即便是经验丰富的JavaScript开发者也很难说清它到底指向什么：
-
-任何足够先进的技术都和魔法无异。   ——Archur C.Clarke">
-<meta property="og:updated_time" content="2016-12-12T09:22:16.148Z">
+<meta property="og:description" content="JavaScript中this的运用@(笔记)[JavaScript] this关键字是JavaScript中最复杂的机制之一。它是一个很特别的关键字，被自动定义在所有函数作用域中。但是即便是经验丰富的JavaScript开发者也很难说清它到底指向什么：  任何足够先进的技术都和魔法无异。   ——Archur C.Clarke">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-12-12T09:22:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中this的用法">
-<meta name="twitter:description" content="JavaScript中this的运用@(笔记)[JavaScript]
-this关键字是JavaScript中最复杂的机制之一。它是一个很特别的关键字，被自动定义在所有函数作用域中。但是即便是经验丰富的JavaScript开发者也很难说清它到底指向什么：
-
-任何足够先进的技术都和魔法无异。   ——Archur C.Clarke">
+<meta name="twitter:description" content="JavaScript中this的运用@(笔记)[JavaScript] this关键字是JavaScript中最复杂的机制之一。它是一个很特别的关键字，被自动定义在所有函数作用域中。但是即便是经验丰富的JavaScript开发者也很难说清它到底指向什么：  任何足够先进的技术都和魔法无异。   ——Archur C.Clarke">
 
 
 
@@ -323,10 +316,10 @@ this关键字是JavaScript中最复杂的机制之一。它是一个很特别的
 <h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2></blockquote>
 <h4 id="误解"><a href="#误解" class="headerlink" title="误解"></a>误解</h4><ul>
 <li><p><strong>指向自身</strong> ：在函数中的this误解为指向函数本身；（每个函数的this是在函数调用时被绑定的，完全取决去函数的调用位置（也就是函数的调用方法，而不是函数声明的位置））</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"foo: "</span> + num);</div><div class="line"></div><div class="line">    <span class="comment">//尝试记录foo被调用的次数</span></div><div class="line">    <span class="keyword">this</span>.count++;</div><div class="line">&#125;</div><div class="line">foo.count = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    foo(i);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(foo.count);<span class="comment">//0</span></div><div class="line"><span class="comment">//如果没有在全局定义声明count并初始化，下面的会输出NaN</span></div><div class="line"><span class="built_in">console</span>.log(count);<span class="comment">//5</span></div><div class="line"><span class="comment">/*</span></div><div class="line">    上面的例子中函数foo中的this并不是指向函数本身，而是指向全局window对象，foo.count = 0为foo函数</div><div class="line">    初始化了count变量，但是this.count的自增是对于全局的count而言的，如果全局没有初始化或者没有声明count</div><div class="line">    的话，console.log(count)得到的结果就是NaN。</div><div class="line">    以上说明this并不是指向函数本身</div><div class="line">*/</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"foo: "</span> + num);</div><div class="line"></div><div class="line">    <span class="comment">//尝试记录foo被调用的次数</span></div><div class="line">    <span class="keyword">this</span>.count++;</div><div class="line">&#125;</div><div class="line">foo.count = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    foo(i);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(foo.count);<span class="comment">//0</span></div><div class="line"><span class="comment">//如果没有在全局定义声明count并初始化，下面的会输出NaN</span></div><div class="line"><span class="built_in">console</span>.log(count);<span class="comment">//5</span></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">    上面的例子中函数foo中的this并不是指向函数本身，而是指向全局window对象，foo.count = 0为foo函数</span></div><div class="line"><span class="comment">    初始化了count变量，但是this.count的自增是对于全局的count而言的，如果全局没有初始化或者没有声明count</span></div><div class="line"><span class="comment">    的话，console.log(count)得到的结果就是NaN。</span></div><div class="line"><span class="comment">    以上说明this并不是指向函数本身</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>它的作用域</strong>：误解this指向函数的作用域。（this任何时候都不指向函数作用域，作用域“对象“无法通过<br>JavaScript代码访问，因为它存在于JavaScript引擎内部。）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="keyword">this</span>.bar();</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</div><div class="line">&#125;</div><div class="line">foo();</div><div class="line"><span class="comment">/*</span></div><div class="line">foo函数中的this尝试调用全局的bar函数，这个是多余的一步，</div><div class="line">因为bar函数就在全局中，可以通过作用域链访问到</div><div class="line">然而bar函数中的this.a是指向全局window的，因为没有声明，所以返回undefined</div><div class="line"></div><div class="line">上面的代码企图访问作用域，失败了</div><div class="line">*/</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="keyword">this</span>.bar();</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</div><div class="line">&#125;</div><div class="line">foo();</div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">foo函数中的this尝试调用全局的bar函数，这个是多余的一步，</span></div><div class="line"><span class="comment">因为bar函数就在全局中，可以通过作用域链访问到</span></div><div class="line"><span class="comment">然而bar函数中的this.a是指向全局window的，因为没有声明，所以返回undefined</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">上面的代码企图访问作用域，失败了</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="this的运用"><a href="#this的运用" class="headerlink" title="this的运用"></a>this的运用</h4><ul>
@@ -483,7 +476,7 @@ this关键字是JavaScript中最复杂的机制之一。它是一个很特别的
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -493,7 +486,7 @@ this关键字是JavaScript中最复杂的机制之一。它是一个很特别的
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
