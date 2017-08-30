@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="辣鸡的日常">
 <meta property="og:description" content="node大文件下载🤔 在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；   项目基础架构   项目中的downloadExcel接口是将获取到的数据，通过大量计算，创建一个obj，通过obj来build一个excel文件流；然后通过fs.writeFileSync函数同步写到node层的架构中，然后返回excel文件的路径，前端请求路径，连接的时候下载，下载完断开连接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-29T23:52:58.000Z">
+<meta property="og:updated_time" content="2017-08-30T00:24:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node大文件下载">
 <meta name="twitter:description" content="node大文件下载🤔 在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；   项目基础架构   项目中的downloadExcel接口是将获取到的数据，通过大量计算，创建一个obj，通过obj来build一个excel文件流；然后通过fs.writeFileSync函数同步写到node层的架构中，然后返回excel文件的路径，前端请求路径，连接的时候下载，下载完断开连接">
@@ -328,9 +328,9 @@
 <p>所以，原来的node中间层，downloadExcel函数中大量的计算使CPU时间片不能释放，让其他I/O没办法发起（debug的时候，调试获取计算前计算后的时间差，是5S，生成excel达到12-5=7S的时间。才得到“意识到node在计算的过程会阻塞进程”）；<br>感叹nodejs的神奇啊，《深入浅出nodejs》需要仔细阅读几次才行；近期忙完之后试一下问题3🙄👆🏻          </p>
 </blockquote>
 <ul>
-<li>(2017-08-30更)忽然发现，之前都是在强制node做中间层来下载excel了，如果没有大数据的话，按照之前的做法，中间层计算并生成excel，不管使用什么方法，在一个请求之中完成计算数据构建结构生成excel是会让node的CPU时间片得不到释放，阻塞其他I/O请求；没有目前解决方案使用大数据快速生成excel文件（其实大数据是如何完成快速的，怎么优化的）的话只能在后台生成excel文件（慢），然后在前端ng层使用读写文件流的方式，提高速度；</li>
+<li>(2017-08-30更)忽然发现，之前都是在强制node做中间层来下载excel了，如果没有大数据的话，按照之前的做法，中间层计算并生成excel，不管使用什么方法，在一个请求之中完成计算数据构建结构生成excel是会让node的CPU时间片得不到释放，阻塞其他I/O请求；没有目前解决方案使用大数据快速生成excel文件（其实大数据是如何完成快速的，怎么优化的）的话只能在后台生成excel文件（慢），然后在前端ng层使用读写文件流的方式，提高速度(但是这一个操作本来是属于浏览器做的，获取默认下载路径，资源解析，下载（下载的原理是什么？也是文件流的读写？）)，这样看的话ng层下载文件流也是多余的强制性使用，解决方案也就是后台生成excel，前端获取资源路径直接下载；</li>
 </ul>
-<p><a href="https://segmentfault.com/a/1190000000519006" target="_blank" rel="external">nodejs中流(stream)的理解</a><br><a href="http://cnodejs.org/topic/4f5b47c42373009b5c04e9cb" target="_blank" rel="external">node.js大文件的下载以及断点续传</a><br><a href="http://cnodejs.org/topic/55a73038f73c01466cf931f2" target="_blank" rel="external">在Node.js中读写大文件</a><br><a href="http://cnodejs.org/topic/56ba030271204e03637a3870" target="_blank" rel="external">通过源码解析 Node.js 中导流（pipe）的实现</a>             </p>
+<p><a href="https://segmentfault.com/a/1190000000519006" target="_blank" rel="external">nodejs中流(stream)的理解</a><br><a href="http://cnodejs.org/topic/4f5b47c42373009b5c04e9cb" target="_blank" rel="external">node.js大文件的下载以及断点续传</a><br><a href="http://cnodejs.org/topic/55a73038f73c01466cf931f2" target="_blank" rel="external">在Node.js中读写大文件</a><br><a href="http://cnodejs.org/topic/56ba030271204e03637a3870" target="_blank" rel="external">通过源码解析 Node.js 中导流（pipe）的实现</a><br><a href="https://github.com/jabez128/stream-handbook" target="_blank" rel="external">stream-handbook</a>            </p>
 
       
     </div>
