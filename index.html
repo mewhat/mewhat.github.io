@@ -308,7 +308,13 @@
 
       
         
-          <h1 id="Vue源码阅读——MVVM原理Observe、watcher、dep"><a href="#Vue源码阅读——MVVM原理Observe、watcher、dep" class="headerlink" title="Vue源码阅读——MVVM原理Observe、watcher、dep"></a>Vue源码阅读——MVVM原理Observe、watcher、dep</h1><p>一直在使用Vue，但是却是不知道双向绑定的具体原理Vue是怎么实现的，比如只知道Object.defineProperty()<br>在实习的项目中有时候会遇到的问题就是，从后台获取到的数据res存到data里面，然而你需要改变res里面存在的数据比如res里面有一个items对象数组，你为数组里面的一个对象添加之前不存在的字段的时候，视图并不会实时更新；因为Vue并没有通过render去更新DOM树的内容；<br>在vue的文档里面指出，vue的双向绑定只会响应data里面有的数据字段，以及子元素；动态添加的元素需要使用Vue.$set(obj, key, value)来添加；    </p>
+          <h1 id="Vue源码阅读——MVVM原理Observe、watcher、dep"><a href="#Vue源码阅读——MVVM原理Observe、watcher、dep" class="headerlink" title="Vue源码阅读——MVVM原理Observe、watcher、dep"></a>Vue源码阅读——MVVM原理Observe、watcher、dep</h1><blockquote>
+<ul>
+<li>一直在使用Vue，但是却是不知道双向绑定的具体原理Vue是怎么实现的，比如只知道Object.defineProperty()；         </li>
+<li>在实习的项目中有时候会遇到的问题就是，从后台获取到的数据res存到data里面，然而你需要改变res里面存在的数据比如res里面有一个items对象数组，你为数组里面的一个对象添加之前不存在的字段的时候，视图并不会实时更新；因为Vue并没有通过render去更新DOM树的内容；      </li>
+<li>在vue的文档里面指出，vue的双向绑定只会响应data里面有的数据字段，以及子元素；动态添加的元素需要使用Vue.$set(obj, key, value)来添加；    </li>
+</ul>
+</blockquote>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/06/Vue源码阅读——MVVM原理Observe、watcher、dep/#more" rel="contents">
               阅读全文 &raquo;
@@ -411,17 +417,8 @@
 
       
         
-          
-          node大文件下载🤔
-在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；
-
-
-项目基础架构
-
-
-项目中的downloadExcel接口是将获取到的数据，通过大量计算，创建一个obj，通过obj来build一个excel文件流；然后通过fs.writeFileSync函数同
-          ...
-
+          <h1 id="node大文件下载🤔"><a href="#node大文件下载🤔" class="headerlink" title="node大文件下载🤔"></a>node大文件下载🤔</h1><blockquote>
+<p>在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/08/29/node大问件下载/#more" rel="contents">
               阅读全文 &raquo;
