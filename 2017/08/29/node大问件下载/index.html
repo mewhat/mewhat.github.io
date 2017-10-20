@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="辣鸡的日常">
 <meta property="og:description" content="node大文件下载🤔 在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T23:57:31.000Z">
+<meta property="og:updated_time" content="2017-10-20T06:47:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node大文件下载">
 <meta name="twitter:description" content="node大文件下载🤔 在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；">
@@ -310,25 +310,29 @@
 
       
         <h1 id="node大文件下载🤔"><a href="#node大文件下载🤔" class="headerlink" title="node大文件下载🤔"></a>node大文件下载🤔</h1><blockquote>
-<p>在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；<br><a id="more"></a></p>
+<p>在近期项目中，遇到Excel大文件下载会阻塞其他post，get请求的问题；</p>
+</blockquote>
+<a id="more"></a>
 <ul>
 <li>项目基础架构</li>
 </ul>
-</blockquote>
 <ul>
 <li>项目中的downloadExcel接口是将获取到的数据，通过大量计算，创建一个obj，通过obj来build一个excel文件流；然后通过fs.writeFileSync函数同步写到node层的架构中，然后返回excel文件的路径，前端请求路径，连接的时候下载，下载完断开连接之后删除文件；</li>
 </ul>
 <ol>
 <li>一开始的想法是，同步写文件会阻塞进程，使前端其他的接口只能等下载完之后才能继续；顺着思路把同步改为fs.writeFile()异步写文件，但是异步写的话不确定什么时候写完，在写了之后就直接放回excel文件连接，这时候去请求这个文件，但是文件还没有下载完，所以文件是不完整的，就会缺失，打开的就是缺失的文件；</li>
 <li>仔细考虑之后想到了流的概念，查了一波stream的文章，createWriteStream,createReadStream写读文件流；但是文件流的方式，同样的会遇到读写速度的问题，虽然可以通过writeStream.on(‘end’, (){})来监听流读写的结束，但是请求的路径响应还是会pending，等待响应，其他请求还是会阻塞；</li>
-<li>继续方案3就是把文件流传到response中，在前端读文件流写到本地；（暂时没解决）</li>
+<li>继续方案3就是把文件流传到response中，在`前端读文件流写到本地；（暂时没解决）</li>
 <li>部门的解决方案最后是使用大数据，后台直接生成excel文件，存到特定的excel文件服务器进行管理前端只需要请求获取excel路径，得到路径直接下载即可；不需要关心excel的生成时间，不用关心计算的过程；</li>
 </ol>
 <h5 id="通过各种博客文章，文档，意识到node在计算的过程，会阻塞进程；在今天看到《深入浅出nodejs》的时候，里面讲到，node适合I-O密集型的应用，不适合CPU密集型的应用；I-O密集型的优势主要是node利用事件循环的处理能力，而不是启动每一个线程为每一个请求服务；CPU密集型应用不适合Node的主要原因：由JavaScript是单线程的，如果长时间运行的计算（比如大循环）将会导致CPU时间片不能释放，使得后续I-O无法发起；只能适当分配计算任务，适时释放CPU时间片（但是怎么分配呢，获取到的数据需要计算之后得到一个结构生成excel文件？？？）；"><a href="#通过各种博客文章，文档，意识到node在计算的过程，会阻塞进程；在今天看到《深入浅出nodejs》的时候，里面讲到，node适合I-O密集型的应用，不适合CPU密集型的应用；I-O密集型的优势主要是node利用事件循环的处理能力，而不是启动每一个线程为每一个请求服务；CPU密集型应用不适合Node的主要原因：由JavaScript是单线程的，如果长时间运行的计算（比如大循环）将会导致CPU时间片不能释放，使得后续I-O无法发起；只能适当分配计算任务，适时释放CPU时间片（但是怎么分配呢，获取到的数据需要计算之后得到一个结构生成excel文件？？？）；" class="headerlink" title="通过各种博客文章，文档，意识到node在计算的过程，会阻塞进程；在今天看到《深入浅出nodejs》的时候，里面讲到，node适合I/O密集型的应用，不适合CPU密集型的应用；I/O密集型的优势主要是node利用事件循环的处理能力，而不是启动每一个线程为每一个请求服务；CPU密集型应用不适合Node的主要原因：由JavaScript是单线程的，如果长时间运行的计算（比如大循环）将会导致CPU时间片不能释放，使得后续I/O无法发起；只能适当分配计算任务，适时释放CPU时间片（但是怎么分配呢，获取到的数据需要计算之后得到一个结构生成excel文件？？？）；"></a>通过各种博客文章，文档，意识到node在计算的过程，会阻塞进程；在今天看到《深入浅出nodejs》的时候，里面讲到，node适合I/O密集型的应用，不适合CPU密集型的应用；I/O密集型的优势主要是node利用事件循环的处理能力，而不是启动每一个线程为每一个请求服务；CPU密集型应用不适合Node的主要原因：由JavaScript是单线程的，如果长时间运行的计算（比如大循环）将会导致CPU时间片不能释放，使得后续I/O无法发起；只能适当分配计算任务，适时释放CPU时间片（但是怎么分配呢，获取到的数据需要计算之后得到一个结构生成excel文件？？？）；</h5><blockquote>
 <p>所以，原来的node中间层，downloadExcel函数中大量的计算使CPU时间片不能释放，让其他I/O没办法发起（debug的时候，调试获取计算前计算后的时间差，是5S，生成excel达到12-5=7S的时间。才得到“意识到node在计算的过程会阻塞进程”）；<br>感叹nodejs的神奇啊，《深入浅出nodejs》需要仔细阅读几次才行；近期忙完之后试一下问题3🙄👆🏻          </p>
 </blockquote>
 <ul>
-<li>(2017-08-30更)忽然发现，之前都是在强制node做中间层来下载excel了，如果没有大数据的话，按照之前的做法，中间层计算并生成excel，不管使用什么方法，在一个请求之中完成计算数据构建结构生成excel是会让node的CPU时间片得不到释放，阻塞其他I/O请求；没有目前解决方案使用大数据快速生成excel文件（其实大数据是如何完成快速的，怎么优化的）的话只能在后台生成excel文件（慢），然后在前端ng层使用读写文件流的方式，提高速度(但是这一个操作本来是属于浏览器做的，获取默认下载路径，资源解析，下载（下载的原理是什么？也是文件流的读写？）)，这样看的话ng层下载文件流也是多余的强制性使用，解决方案也就是后台生成excel，前端获取资源路径直接下载；</li>
+<li><p>(2017-08-30更)忽然发现，之前都是在强制node做中间层来下载excel了，如果没有大数据的话，按照之前的做法，中间层计算并生成excel，不管使用什么方法，在一个请求之中完成计算数据构建结构生成excel是会让node的CPU时间片得不到释放，阻塞其他I/O请求；没有目前解决方案使用大数据快速生成excel文件（其实大数据是如何完成快速的，怎么优化的）的话只能在后台生成excel文件（慢），然后在前端ng层使用读写文件流的方式，提高速度(但是这一个操作本来是属于浏览器做的，获取默认下载路径，资源解析，下载（下载的原理是什么？也是文件流的读写？）)，这样看的话ng层下载文件流也是多余的强制性使用，解决方案也就是后台生成excel，前端获取资源路径直接下载；</p>
+</li>
+<li><p>（2017-10-20）进程阻塞可以开启多进程模式，使用cluster可以解决这个问题；但是依靠的是多核CPU，有一定的限制，优化这一步可以优化计算过程，避免不必要的计算和多循环计算；</p>
+</li>
 </ul>
 <p><a href="https://segmentfault.com/a/1190000000519006" target="_blank" rel="external">nodejs中流(stream)的理解</a><br><a href="http://cnodejs.org/topic/4f5b47c42373009b5c04e9cb" target="_blank" rel="external">node.js大文件的下载以及断点续传</a><br><a href="http://cnodejs.org/topic/55a73038f73c01466cf931f2" target="_blank" rel="external">在Node.js中读写大文件</a><br><a href="http://cnodejs.org/topic/56ba030271204e03637a3870" target="_blank" rel="external">通过源码解析 Node.js 中导流（pipe）的实现</a><br><a href="https://github.com/jabez128/stream-handbook" target="_blank" rel="external">stream-handbook</a>            </p>
 
@@ -465,7 +469,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
