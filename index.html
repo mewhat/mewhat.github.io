@@ -308,13 +308,12 @@
 
       
         
-          <h1 id="Vue源码阅读——MVVM原理Observe、watcher、dep"><a href="#Vue源码阅读——MVVM原理Observe、watcher、dep" class="headerlink" title="Vue源码阅读——MVVM原理Observe、watcher、dep"></a>Vue源码阅读——MVVM原理Observe、watcher、dep</h1><blockquote>
-<ul>
+          <h1 id="Vue源码阅读——MVVM原理Observe、watcher、dep"><a href="#Vue源码阅读——MVVM原理Observe、watcher、dep" class="headerlink" title="Vue源码阅读——MVVM原理Observe、watcher、dep"></a>Vue源码阅读——MVVM原理Observe、watcher、dep</h1><ul>
 <li>一直在使用Vue，但是却是不知道双向绑定的具体原理Vue是怎么实现的，比如只知道Object.defineProperty()；         </li>
 <li>在实习的项目中有时候会遇到的问题就是，从后台获取到的数据res存到data里面，然而你需要改变res里面存在的数据比如res里面有一个items对象数组，你为数组里面的一个对象添加之前不存在的字段的时候，视图并不会实时更新；因为Vue并没有通过render去更新DOM树的内容；      </li>
 <li>在vue的文档里面指出，vue的双向绑定只会响应data里面有的数据字段，以及子元素；动态添加的元素需要使用Vue.$set(obj, key, value)来添加；    </li>
 </ul>
-</blockquote>
+<p><img src="https://cn.vuejs.org/images/logo.png" alt=""></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/09/06/Vue源码阅读——MVVM原理Observe、watcher、dep/#more" rel="contents">
               阅读全文 &raquo;
@@ -579,6 +578,117 @@ vue 如何细粒度开发如何解耦vue的开发如何处理多业务场景和�
             
               
                 
+                <a class="post-title-link" href="/2017/08/21/promise/" itemprop="url">
+                  promise
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-21T17:54:10+08:00" content="2017-08-21">
+              2017-08-21
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/08/21/promise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/21/promise/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Promise
+Promise状态一旦改变就不会再变；
+Promise函数两个参数（resolve，reject）
+Promise在创建之后会立即执行
+resolve之后的代码还会运行，但是reject跑出的错误不会运行
+Promise错误会向后继续跑出知道被catch捕获为止，建议使用catch捕
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/08/21/promise/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/19/记一次面试/" itemprop="url">
                   记一次面试
                 </a>
@@ -662,111 +772,6 @@ vue 如何细粒度开发如何解耦vue的开发如何处理多业务场景和�
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/21/代理模式/" itemprop="url">
-                  代理模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-21T15:00:44+08:00" content="2017-01-21">
-              2017-01-21
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/21/代理模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/21/代理模式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><p>@(记录)[读书笔记]</p>
-<blockquote>
-<p>代理模式：为一个对象提供一个代用品或者占位符，以便控制它的访问。<br>关键点是，当客户不方便直接访问一个对象或者不满足需要的时候，提供一个替身对象来控制对这个对象的访问，客户实际上访问的是替身对象。替身对象对请求做出一些处理之后，再把请求转交给本体对象。<br><img src="http://oemsj8g9f.bkt.clouddn.com/29.png" alt=""><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/21/代理模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -812,7 +817,7 @@ vue 如何细粒度开发如何解耦vue的开发如何处理多业务场景和�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
