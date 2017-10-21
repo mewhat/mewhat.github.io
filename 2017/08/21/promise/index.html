@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="Promise Promise状态一旦改变就不会再变； Promise函数两个参数（resolve，reject） Promise在创建之后会立即执行 resolve之后的代码还会运行，但是reject跑出的错误不会运行 Promise错误会向后继续跑出知道被catch捕获为止，建议使用catch捕获异常而不是在then的第二个参数reject处理,如果使用reject捕获不处理，不加reject">
+<meta name="description" content="Promise Promise状态一旦改变就不会再变； Promise函数两个参数（resolve，reject）">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="promise">
 <meta property="og:url" content="http://yoursite.com/2017/08/21/promise/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="Promise Promise状态一旦改变就不会再变； Promise函数两个参数（resolve，reject） Promise在创建之后会立即执行 resolve之后的代码还会运行，但是reject跑出的错误不会运行 Promise错误会向后继续跑出知道被catch捕获为止，建议使用catch捕获异常而不是在then的第二个参数reject处理,如果使用reject捕获不处理，不加reject">
+<meta property="og:description" content="Promise Promise状态一旦改变就不会再变； Promise函数两个参数（resolve，reject）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-21T15:39:45.000Z">
+<meta property="og:updated_time" content="2017-10-21T16:07:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="promise">
-<meta name="twitter:description" content="Promise Promise状态一旦改变就不会再变； Promise函数两个参数（resolve，reject） Promise在创建之后会立即执行 resolve之后的代码还会运行，但是reject跑出的错误不会运行 Promise错误会向后继续跑出知道被catch捕获为止，建议使用catch捕获异常而不是在then的第二个参数reject处理,如果使用reject捕获不处理，不加reject">
+<meta name="twitter:description" content="Promise Promise状态一旦改变就不会再变； Promise函数两个参数（resolve，reject）">
 
 
 
@@ -312,6 +312,9 @@
         <h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><ul>
 <li>Promise状态一旦改变就不会再变；</li>
 <li>Promise函数两个参数（resolve，reject）</li>
+</ul>
+<a id="more"></a>
+<ul>
 <li>Promise在创建之后会立即执行</li>
 <li>resolve之后的代码还会运行，但是reject跑出的错误不会运行</li>
 <li>Promise错误会向后继续跑出知道被catch捕获为止，建议使用catch捕获异常而不是在then的第二个参数reject处理,如果使用reject捕获不处理，不加reject处理的话外层不会处理里面抛出的异常, then是链式运行，就是同步运行，catch最好放在最后捕获异常，如果放在中间有可能跳过异常而没有捕获到后面的异常</li>
@@ -457,7 +460,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
