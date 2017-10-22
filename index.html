@@ -308,13 +308,10 @@
 
       
         
-          
-          👨🏻‍💻JavaScript浅拷贝与深拷贝原理
-在JavaScript中一般简单类型是按值传递的；object与array是引用传递(就是传递地址，而不是值)
-
-1234567891011var a = 'tom';var b = a;b = 'chen';console.log(a); //
-          ...
-
+          <h1 id="👨🏻‍💻JavaScript浅拷贝与深拷贝"><a href="#👨🏻‍💻JavaScript浅拷贝与深拷贝" class="headerlink" title="👨🏻‍💻JavaScript浅拷贝与深拷贝"></a>👨🏻‍💻JavaScript浅拷贝与深拷贝</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
+<p>在JavaScript中一般简单类型是按值传递的；object与array是引用传递(就是传递地址，而不是值)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">'tom'</span>;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">b = <span class="string">'chen'</span>;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 'tom'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">    name: <span class="string">'tom'</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">b.name = <span class="string">'chen'</span>;</div><div class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">// 'chen'</span></div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/10/22/shadow-deep-copy/#more" rel="contents">
               阅读全文 &raquo;
