@@ -67,7 +67,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -83,22 +83,20 @@
 
 
 
-<meta name="description" content="线性渐变linear-gradient运用——条纹背景@(CSS)[笔记]   CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客CSS3 Gradient 和菜鸟教程的CSS3 渐变Gradients">
-<meta name="keywords" content="CSS">
+<meta name="description" content="👨🏻‍💻JavaScript浅拷贝与深拷贝原理 在JavaScript中一般简单类型是按值传递的；object与array是引用传递(就是传递地址，而不是值)  1234567891011var a = &apos;tom&apos;;var b = a;b = &apos;chen&apos;;console.log(a); // &apos;tom&apos;var a = &amp;#123;    name: &apos;tom&apos;&amp;#125;;var b =">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性渐变linear-gradient运用——条纹背景">
-<meta property="og:url" content="http://yoursite.com/2016/11/27/CSS3之线性渐变linear-gradient/index.html">
+<meta property="og:title" content="👨🏻‍💻JavaScript浅拷贝与深拷贝">
+<meta property="og:url" content="http://yoursite.com/2017/10/22/shadow-deep-copy/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="线性渐变linear-gradient运用——条纹背景@(CSS)[笔记]   CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客CSS3 Gradient 和菜鸟教程的CSS3 渐变Gradients">
+<meta property="og:description" content="👨🏻‍💻JavaScript浅拷贝与深拷贝原理 在JavaScript中一般简单类型是按值传递的；object与array是引用传递(就是传递地址，而不是值)  1234567891011var a = &apos;tom&apos;;var b = a;b = &apos;chen&apos;;console.log(a); // &apos;tom&apos;var a = &amp;#123;    name: &apos;tom&apos;&amp;#125;;var b =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B91.png">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B92.png">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B93.png">
-<meta property="og:updated_time" content="2016-11-27T03:47:08.000Z">
+<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/WX20171022-192239@2x.png">
+<meta property="og:updated_time" content="2017-10-22T11:24:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性渐变linear-gradient运用——条纹背景">
-<meta name="twitter:description" content="线性渐变linear-gradient运用——条纹背景@(CSS)[笔记]   CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客CSS3 Gradient 和菜鸟教程的CSS3 渐变Gradients">
-<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B91.png">
+<meta name="twitter:title" content="👨🏻‍💻JavaScript浅拷贝与深拷贝">
+<meta name="twitter:description" content="👨🏻‍💻JavaScript浅拷贝与深拷贝原理 在JavaScript中一般简单类型是按值传递的；object与array是引用传递(就是传递地址，而不是值)  1234567891011var a = &apos;tom&apos;;var b = a;b = &apos;chen&apos;;console.log(a); // &apos;tom&apos;var a = &amp;#123;    name: &apos;tom&apos;&amp;#125;;var b =">
+<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/WX20171022-192239@2x.png">
 
 
 
@@ -119,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/27/CSS3之线性渐变linear-gradient/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/22/shadow-deep-copy/"/>
 
-  <title> 线性渐变linear-gradient运用——条纹背景 | 辣鸡的日常 </title>
+  <title> 👨🏻‍💻JavaScript浅拷贝与深拷贝 | 辣鸡的日常 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +259,7 @@
             
             
               
-                线性渐变linear-gradient运用——条纹背景
+                👨🏻‍💻JavaScript浅拷贝与深拷贝
               
             
           </h1>
@@ -273,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-27T10:54:06+08:00" content="2016-11-27">
-              2016-11-27
+            <time itemprop="dateCreated" datetime="2017-10-22T19:01:55+08:00" content="2017-10-22">
+              2017-10-22
             </time>
           </span>
 
@@ -284,8 +282,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/27/CSS3之线性渐变linear-gradient/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/CSS3之线性渐变linear-gradient/" itemprop="commentsCount"></span>
+                <a href="/2017/10/22/shadow-deep-copy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/22/shadow-deep-copy/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,73 +311,13 @@
       
 
       
-        <h3 id="线性渐变linear-gradient运用——条纹背景"><a href="#线性渐变linear-gradient运用——条纹背景" class="headerlink" title="线性渐变linear-gradient运用——条纹背景"></a>线性渐变linear-gradient运用——条纹背景</h3><p>@(CSS)[笔记]</p>
-<hr>
-<blockquote>
-<p>CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)，这里主要是讲线性渐变linear-gradient的使用，参考了大漠大神的技术博客<a href="http://www.w3cplus.com/content/css3-gradient" target="_blank" rel="external">CSS3 Gradient</a> 和菜鸟教程的CSS3 渐变<a href="http://www.runoob.com/css3/css3-gradients.html" target="_blank" rel="external">Gradients</a> </p>
+        <h1 id="👨🏻‍💻JavaScript浅拷贝与深拷贝"><a href="#👨🏻‍💻JavaScript浅拷贝与深拷贝" class="headerlink" title="👨🏻‍💻JavaScript浅拷贝与深拷贝"></a>👨🏻‍💻JavaScript浅拷贝与深拷贝</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
+<p>在JavaScript中一般简单类型是按值传递的；object与array是引用传递(就是传递地址，而不是值)</p>
 </blockquote>
-<a id="more"></a>
-<p>CSS3的线性渐变linear-gradient用法就不多介绍了，详情参考上面的博客和教程。<br>最简单的使用就是（方向，color1，color2）意思是在某个方向位置开始，颜色从color1渐变到color2</p>
-<p>上一周图书馆借了一本《CSS揭秘》，看了一半收获很大，《CSS揭秘》介绍了很多CSS方面上的技巧，其中有一个就是背景条纹，使用CSS线性渐变和background-size完成的效果，两者的结合得到的效果很强大。</p>
-<p>在设计网页的时候，经常会使用到条纹背景，或者条纹特效；通常的做法是使用图片或者SVG来取代图片，但是不管使用二者哪一个都会使HTTP请求增加，这是我们不想见到的。在今天的话使用CSS3是可以解决条纹背景的问题的。</p>
-<p>css线性渐变</p>
-<pre><code>.line1 {
-    background: linear-gradient(#fb3,#58a);
-}
-</code></pre><p>容器顶部和底部分别填充#fb3,#58a实色，正真的渐变只有中间的60%</p>
-<pre><code>.line2 {
-    background: linear-gradient(#fb3 20%,#58a 80%);
-}
-</code></pre><p>设置50%的话，就看不到渐变了</p>
-<pre><code>.line3 {
-    background: linear-gradient(#fb3 50%,#58a 50%);
-    background-size: 100% 30px;
-}
-</code></pre><p>不等宽条纹</p>
-<pre><code>.line4 {
-    background: linear-gradient(#fb3 30%,#58a 30%);
-    background-size: 100% 30px;
-}
-</code></pre><p>垂直条纹</p>
-<pre><code>.line5 {
-    background: linear-gradient(to right,#fb3 50%,#58a 0);
-    background-size: 30px 100%;
-}
-</code></pre><p>45°条纹</p>
-<pre><code>.line6 {
-    background: linear-gradient(45deg,#fb3 50%,#58a 0);
-    background-size: 30px 30px;
-}
-</code></pre><p>45°条纹2</p>
-<pre><code>.line7 {
-    background: linear-gradient(45deg,#fb3 25%,#58a 0,#58a 50%,#fb3 0,#fb3 75%,#58a 0);
-    background-size: 30px 30px;
-}
-</code></pre><p>45°条纹3(重复线性渐变repeating-linear-gradient)</p>
-<pre><code>.line8 {
-    background: repeating-linear-gradient(45deg,#fb3,#fb3 15px,#58a 0,#58a 30px);
-}
-</code></pre><p>三色条纹</p>
-<pre><code>.line9 {
-    background: linear-gradient(#fb3 33.33%,#58a 0,#58a 66.66%,yellowgreen 0);
-    background-size: 100% 30px;
-}
-</code></pre><p>同色系条纹</p>
-<pre><code>.line10 {
-    background: repeating-linear-gradient(30deg,#79b,#79b 15px,#58a 0,#58a 30px);
-}
-</code></pre><p>同色系条纹（运用半透明色）</p>
-<pre><code>.line11 {
-    background: #58a;
-    background-image: repeating-linear-gradient(30deg,hsla(0,0%,100%,0.1),
-        hsla(0,0%,100%,0.1) 15px,
-        transparent 0,transparent 30px);
-}
-</code></pre><p>简单的效果图：</p>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B91.png" alt=""><br><img src="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B92.png" alt=""><br><img src="http://oemsj8g9f.bkt.clouddn.com/%E6%9D%A1%E7%BA%B93.png" alt=""></p>
-<blockquote>
-<p>具体的效果在之后的作品中更新</p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">'tom'</span>;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">b = <span class="string">'chen'</span>;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 'tom'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line">    name: <span class="string">'tom'</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">b.name = <span class="string">'chen'</span>;</div><div class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">// 'chen'</span></div></pre></td></tr></table></figure>
+<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extendCopy</span>(<span class="params">p</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> c = &#123;&#125;;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</div><div class="line">		c[i] = p[i];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">newObj, copyObj</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> newObj = newObj || &#123;&#125;;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> copyObj) &#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> copyObj[i] === <span class="string">'object'</span>) &#123;</div><div class="line">			newObj[i] = (copyObj[i].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">			deepCopy(newObj[i], copyObj[i]);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			newObj[i] = copyObj[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> newObj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oemsj8g9f.bkt.clouddn.com/WX20171022-192239@2x.png" alt=""></p>
 
       
     </div>
@@ -423,7 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -432,17 +370,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/27/css动画animatee/" rel="next" title="css动画之animate">
-                <i class="fa fa-chevron-left"></i> css动画之animate
+              <a href="/2017/10/21/meizu-campus-js-console/" rel="next" title="🙄2018魅族前端校招笔试">
+                <i class="fa fa-chevron-left"></i> 🙄2018魅族前端校招笔试
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/29/window-onload和JQuery-document-ready的区别/" rel="prev" title="window.onload和$(document).ready的区别">
-                window.onload和$(document).ready的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,8 +402,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/27/CSS3之线性渐变linear-gradient/"
-           data-title="线性渐变linear-gradient运用——条纹背景" data-url="http://yoursite.com/2016/11/27/CSS3之线性渐变linear-gradient/">
+      <div class="ds-thread" data-thread-key="2017/10/22/shadow-deep-copy/"
+           data-title="👨🏻‍💻JavaScript浅拷贝与深拷贝" data-url="http://yoursite.com/2017/10/22/shadow-deep-copy/">
       </div>
     
   </div>
@@ -573,7 +507,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性渐变linear-gradient运用——条纹背景"><span class="nav-number">1.</span> <span class="nav-text">线性渐变linear-gradient运用——条纹背景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#👨🏻‍💻JavaScript浅拷贝与深拷贝"><span class="nav-number">1.</span> <span class="nav-text">👨🏻‍💻JavaScript浅拷贝与深拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝"><span class="nav-number">1.2.</span> <span class="nav-text">浅拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深拷贝"><span class="nav-number">1.3.</span> <span class="nav-text">深拷贝</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
