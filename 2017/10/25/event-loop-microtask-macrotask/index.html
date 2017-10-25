@@ -67,7 +67,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="点点滴滴," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -83,22 +83,18 @@
 
 
 
-<meta name="description" content="近期总结先来一波鸡汤  人丑就该多读书。你必须自己叫醒自己。不能把世界让给你鄙视的人。命是弱者的借口，运是强者的谦辞。身不饥寒，天未曾负我；学无长进，我何以对天。说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）">
-<meta name="keywords" content="点点滴滴">
+<meta name="description" content="👽event-loop-microtask-macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="近期总结">
-<meta property="og:url" content="http://yoursite.com/2016/10/13/now-status/index.html">
+<meta property="og:title" content="👽event-loop-microtask-macrotask">
+<meta property="og:url" content="http://yoursite.com/2017/10/25/event-loop-microtask-macrotask/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="近期总结先来一波鸡汤  人丑就该多读书。你必须自己叫醒自己。不能把世界让给你鄙视的人。命是弱者的借口，运是强者的谦辞。身不饥寒，天未曾负我；学无长进，我何以对天。说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）">
+<meta property="og:description" content="👽event-loop-microtask-macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/006x19xfgw1f8jrbopi6cj30jg0ay3z8.jpg">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/56143.jpg">
-<meta property="og:image" content="http://oemsj8g9f.bkt.clouddn.com/you_dont_know_javascript.jpg">
-<meta property="og:updated_time" content="2016-10-13T14:15:52.000Z">
+<meta property="og:updated_time" content="2017-10-25T06:50:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="近期总结">
-<meta name="twitter:description" content="近期总结先来一波鸡汤  人丑就该多读书。你必须自己叫醒自己。不能把世界让给你鄙视的人。命是弱者的借口，运是强者的谦辞。身不饥寒，天未曾负我；学无长进，我何以对天。说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）">
-<meta name="twitter:image" content="http://oemsj8g9f.bkt.clouddn.com/006x19xfgw1f8jrbopi6cj30jg0ay3z8.jpg">
+<meta name="twitter:title" content="👽event-loop-microtask-macrotask">
+<meta name="twitter:description" content="👽event-loop-microtask-macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;">
 
 
 
@@ -119,9 +115,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/13/now-status/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/25/event-loop-microtask-macrotask/"/>
 
-  <title> 近期总结 | 辣鸡的日常 </title>
+  <title> 👽event-loop-microtask-macrotask | 辣鸡的日常 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +257,7 @@
             
             
               
-                近期总结
+                👽event-loop-microtask-macrotask
               
             
           </h1>
@@ -273,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-13T21:52:50+08:00" content="2016-10-13">
-              2016-10-13
+            <time itemprop="dateCreated" datetime="2017-10-25T14:28:51+08:00" content="2017-10-25">
+              2017-10-25
             </time>
           </span>
 
@@ -284,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/13/now-status/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/now-status/" itemprop="commentsCount"></span>
+                <a href="/2017/10/25/event-loop-microtask-macrotask/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/25/event-loop-microtask-macrotask/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,23 +309,29 @@
       
 
       
-        <blockquote>
-<p>近期总结<br>先来一波鸡汤</p>
+        <h1 id="👽event-loop-microtask-macrotask"><a href="#👽event-loop-microtask-macrotask" class="headerlink" title="👽event-loop-microtask-macrotask"></a>👽event-loop-microtask-macrotask</h1><blockquote>
+<p>文章引用 creeperyyang的blog<a href="https://github.com/creeperyang/blog/issues/21" target="_blank" rel="external">从Promise来看JavaScript中的Event Loop、Tasks和Microtasks</a> </p>
+<p><a href="https://github.com/creeperyang/blog/issues/26" target="_blank" rel="external">Node.js的event loop及timer/setImmediate/nextTick</a></p>
 </blockquote>
-<p><strong>人丑就该多读书。<br>你必须自己叫醒自己。<br>不能把世界让给你鄙视的人。<br>命是弱者的借口，运是强者的谦辞。<br>身不饥寒，天未曾负我；学无长进，我何以对天。<br>说出来被人嘲笑的梦想，才有实现的价值。（还记得我说过的一句话：我是要进谷歌的男人，从此被人调侃谷歌权）</strong><br><img src="http://oemsj8g9f.bkt.clouddn.com/006x19xfgw1f8jrbopi6cj30jg0ay3z8.jpg" alt=""><br><a id="more"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="number">4</span>)&#125;, <span class="number">0</span>);</div><div class="line">    <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> <span class="title">executor</span>(<span class="params">resolve</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">0</span> ; i&lt;<span class="number">10000</span> ; i++ ) &#123;</div><div class="line">            i == <span class="number">9999</span> &amp;&amp; resolve();</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>);</div><div class="line">    &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="number">5</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</div><div class="line">&#125;)()</div><div class="line"><span class="comment">// 为什么输出结果是1,2,3,5,4而非1,2,3,4,5？</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <blockquote>
-<p>前期的我</p>
+<p>event-loop中每一次loop执行的是:task-&gt; (setTimeout, setImmediate, io…)</p>
+<p>在当前”执行栈”的尾部–下一次Event Loop（主线程读取”任务队列”）之前，执行microtask -&gt; (promise, proccess.nextTick())</p>
 </blockquote>
-<p>目前已经大三过去一个月多月了，大学的日子也差不多了，离实习工作也不过只有一年不到了，<br>然而问问自己到目前为止学到了什么，好像并没有，大一大二都是无头苍蝇跟着兴趣觉得什么好玩就浪一会，<br>玩玩ACM，玩玩C++/C ，又玩玩游戏开发Cocos2d写了个flappy bird 2048 ，<br>后来看到Python那么6，又玩玩Python，爬虫，抓视频，抓网页，抓妹子图片……</p>
-<blockquote>
-<p>目前的我</p>
-</blockquote>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/56143.jpg" alt=""><br>到现在很认真的干起了Javascript，走前端路，目标Node全栈；<br>方向很明确 所以看书也很明确，大二结束的时候一直在看Javascript的视频，刷之前丢下的 HTML CSS知识点，<br>拿起了大一看了一章就放下的Javascript高级程序设计（两年了还是第三版验证经典，滑稽脸）；<br>有空刷刷掘金社区（强烈推荐，很多干货），刷刷知乎，刷刷简书，无聊看看漫画……<br>红宝书看完Javascript动画实在啃不下去了，就去图书馆看了看有什么好书，朋友推荐：<br>Javascript忍者秘籍，单页Web应用，偶尔发现Node，然后深深被吸引，然后不可自拔；</p>
-<p>前不久看不下红宝书，然后话3,4天把Javascript Dom编程艺术刷完了，很好的一本书，其实知识点在红宝书上已经看过了，而且红宝书的更加全面，不过Dom编程艺术的话，更加侧重思考，一路下来，一简单的图片墙小Demo引入Dom的操作，<br>在写代码中思考对用户的体验，如果用户的浏览器不支持Javascript，不支持CSS，编写的代码也要尽量的不影响用户的体验，做到Javascript的平稳退化；<br>有空写一下读后感，（滑稽脸</p>
-<p><img src="http://oemsj8g9f.bkt.clouddn.com/you_dont_know_javascript.jpg" alt=""><br>然后不久前出的一本《你不知道的Javascript（初级篇）》发现这本书非常好，渐渐断断目前看到了Javascript中this的理解，剖析的很深，很容易懂；看完一定要写写读后感（渣渣语文挂科，逃）<br>中级篇也出来了，看了看目录就有想入手的冲动，Promise异步编程等等的知识，太想了解了；<br>看到大神们在掘金的文章受益匪浅啊，看到博客水平也很高啊，距离还很远，（向dalao低头）</p>
-<blockquote>
-<p>不管怎么说咯，加油咯<br>近期急需鸡汤Orz<br>好了，继续看书了Orz<br>坑已经挖了，就要自己填了</p>
-</blockquote>
+<h2 id="下面总结几点关于event-loop的："><a href="#下面总结几点关于event-loop的：" class="headerlink" title="下面总结几点关于event loop的："></a>下面总结几点关于event loop的：</h2><ol>
+<li>在浏览器和Node.js中，JS都是以单线程在运行，当前执行栈必然是执行完（为空） 才会进入下个event loop。</li>
+<li>process.nextTick和Promise都是microtask，即在进入下个event loop前执行（也可以理解成不是event loop相关的概念）</li>
+<li>setTimeout/setImmediate/io是task，会把回调延迟到后面的某个event loop执行。</li>
+<li>node.js中event loop分为不同的阶段，每个阶段有自己的任务。</li>
+</ol>
+<h2 id="event-loop怎么处理tasks和microtasks"><a href="#event-loop怎么处理tasks和microtasks" class="headerlink" title="event loop怎么处理tasks和microtasks?"></a>event loop怎么处理tasks和microtasks?</h2><ol>
+<li>每个线程有自己的事件循环，所以每个web worker有自己的，所以它才可以独立执行。然而，所有同属一个origin的windows共享一个事件循环，所以它们可以同步交流。</li>
+<li>事件循环不间断在跑，执行任何进入队列的task。</li>
+<li>一个事件循环可以有多个task source，每个task source保证自己的任务列表的执行顺序，但由浏览器在（事件循环的）每轮中挑选某个task source的task。</li>
+<li>tasks are scheduled，所以浏览器可以从内部到JS/DOM，保证动作按序发生。在tasks之间，浏览器可能会render updates。从鼠标点击到事件回调需要schedule task，解析html，setTimeout这些都需要。</li>
+<li>microtasks are scheduled，经常是为需要直接在当前脚本执行完后立即发生的事，比如async某些动作但不必承担新开task的弊端。microtask queue在回调之后执行，只要没有其它JS在执行中，并且在每个task的结尾。microtask中添加的microtask也被添加到microtask queue的末尾并处理。microtask包括mutation observer callbacks和promise callbacks。</li>
+</ol>
 
       
     </div>
@@ -373,7 +375,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/点点滴滴/" rel="tag">#点点滴滴</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -382,17 +384,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/06/重置默认样式/" rel="next" title="重置默认样式">
-                <i class="fa fa-chevron-left"></i> 重置默认样式
+              <a href="/2017/10/22/shadow-deep-copy/" rel="next" title="👨🏻‍💻JavaScript浅拷贝与深拷贝">
+                <i class="fa fa-chevron-left"></i> 👨🏻‍💻JavaScript浅拷贝与深拷贝
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/28/after-和-before的使用和拓展/" rel="prev" title=":after 和 :before的使用和拓展">
-                :after 和 :before的使用和拓展 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -418,8 +416,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/13/now-status/"
-           data-title="近期总结" data-url="http://yoursite.com/2016/10/13/now-status/">
+      <div class="ds-thread" data-thread-key="2017/10/25/event-loop-microtask-macrotask/"
+           data-title="👽event-loop-microtask-macrotask" data-url="http://yoursite.com/2017/10/25/event-loop-microtask-macrotask/">
       </div>
     
   </div>
@@ -523,7 +521,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#👽event-loop-microtask-macrotask"><span class="nav-number">1.</span> <span class="nav-text">👽event-loop-microtask-macrotask</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下面总结几点关于event-loop的："><span class="nav-number">1.1.</span> <span class="nav-text">下面总结几点关于event loop的：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event-loop怎么处理tasks和microtasks"><span class="nav-number">1.2.</span> <span class="nav-text">event loop怎么处理tasks和microtasks?</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
