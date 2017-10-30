@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="👽event-loop-microtask-macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;">
+<meta name="description" content="event-loop，microtask，macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;    se">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="👽event-loop-microtask-macrotask">
+<meta property="og:title" content="event-loop-microtask-macrotask">
 <meta property="og:url" content="http://yoursite.com/2017/10/25/event-loop-microtask-macrotask/index.html">
 <meta property="og:site_name" content="辣鸡的日常">
-<meta property="og:description" content="👽event-loop-microtask-macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;">
+<meta property="og:description" content="event-loop，microtask，macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;    se">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-25T06:50:23.000Z">
+<meta property="og:updated_time" content="2017-10-30T05:53:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="👽event-loop-microtask-macrotask">
-<meta name="twitter:description" content="👽event-loop-microtask-macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;">
+<meta name="twitter:title" content="event-loop-microtask-macrotask">
+<meta name="twitter:description" content="event-loop，microtask，macrotask 文章引用 creeperyyang的blog从Promise来看JavaScript中的Event Loop、Tasks和Microtasks  Node.js的event loop及timer/setImmediate/nextTick  1234567891011121314(function test() &amp;#123;    se">
 
 
 
@@ -117,7 +117,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2017/10/25/event-loop-microtask-macrotask/"/>
 
-  <title> 👽event-loop-microtask-macrotask | 辣鸡的日常 </title>
+  <title> event-loop-microtask-macrotask | 辣鸡的日常 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +257,7 @@
             
             
               
-                👽event-loop-microtask-macrotask
+                event-loop-microtask-macrotask
               
             
           </h1>
@@ -309,7 +309,7 @@
       
 
       
-        <h1 id="👽event-loop-microtask-macrotask"><a href="#👽event-loop-microtask-macrotask" class="headerlink" title="👽event-loop-microtask-macrotask"></a>👽event-loop-microtask-macrotask</h1><blockquote>
+        <h1 id="event-loop，microtask，macrotask"><a href="#event-loop，microtask，macrotask" class="headerlink" title="event-loop，microtask，macrotask"></a>event-loop，microtask，macrotask</h1><blockquote>
 <p>文章引用 creeperyyang的blog<a href="https://github.com/creeperyang/blog/issues/21" target="_blank" rel="external">从Promise来看JavaScript中的Event Loop、Tasks和Microtasks</a> </p>
 <p><a href="https://github.com/creeperyang/blog/issues/26" target="_blank" rel="external">Node.js的event loop及timer/setImmediate/nextTick</a></p>
 </blockquote>
@@ -421,7 +421,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/10/25/event-loop-microtask-macrotask/"
-           data-title="👽event-loop-microtask-macrotask" data-url="http://yoursite.com/2017/10/25/event-loop-microtask-macrotask/">
+           data-title="event-loop-microtask-macrotask" data-url="http://yoursite.com/2017/10/25/event-loop-microtask-macrotask/">
       </div>
     
   </div>
@@ -525,7 +525,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#👽event-loop-microtask-macrotask"><span class="nav-number">1.</span> <span class="nav-text">👽event-loop-microtask-macrotask</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下面总结几点关于event-loop的："><span class="nav-number">1.1.</span> <span class="nav-text">下面总结几点关于event loop的：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event-loop怎么处理tasks和microtasks"><span class="nav-number">1.2.</span> <span class="nav-text">event loop怎么处理tasks和microtasks?</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#event-loop，microtask，macrotask"><span class="nav-number">1.</span> <span class="nav-text">event-loop，microtask，macrotask</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下面总结几点关于event-loop的："><span class="nav-number">1.1.</span> <span class="nav-text">下面总结几点关于event loop的：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event-loop怎么处理tasks和microtasks"><span class="nav-number">1.2.</span> <span class="nav-text">event loop怎么处理tasks和microtasks?</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
